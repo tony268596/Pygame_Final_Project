@@ -42,9 +42,9 @@ SPECIAL_SKILL_BTN_IMAGE = pygame.transform.scale(
 MONEY_IMAGE = pygame.transform.scale(pygame.image.load(
     os.path.join(IMAGE_PATH, "coin.png")), (180, 60))
 game_loss_image = pygame.transform.scale(pygame.image.load(
-    os.path.join(IMAGE_PATH, "game_over.png")), (400, 400))
+    os.path.join(IMAGE_PATH, "game_over_ground.png")), (400, 400))
 game_win_image = pygame.transform.scale(pygame.image.load(
-    os.path.join(IMAGE_PATH, "winning_view.png")), (600, 550))
+    os.path.join(IMAGE_PATH, "win_background.png")), (600, 550))
 SKILL_ANIMATION_IMAGE = pygame.transform.scale(pygame.image.load(
     os.path.join(IMAGE_PATH, "skilldisplay.png")), (600, 450))
 game_completed_image = pygame.transform.scale(pygame.image.load(

@@ -17,12 +17,12 @@ class StartMenu:
         self.menu_win = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
         # background
         self.bg = pygame.transform.scale(pygame.image.load(os.path.join(
-            IMAGE_PATH, "start_background.png")), (WIN_WIDTH, WIN_HEIGHT))
+            IMAGE_PATH, "menu_start.png")), (WIN_WIDTH, WIN_HEIGHT))
 
         # button
-        self.start_btn = Buttons(412, 195, 200, 100)
-        self.sound_btn = Buttons(522, 312, 80, 80)
-        self.mute_btn = Buttons(522, 402, 80, 80)
+        self.start_btn = Buttons(393, 373, 240, 80)
+        self.sound_btn = Buttons(833, 493, 80, 82)
+        self.mute_btn = Buttons(933, 493, 80, 82)
         self.buttons = [self.start_btn,
                         self.sound_btn,
                         self.mute_btn]
@@ -42,7 +42,7 @@ class StartMenu:
 
     def run(self):
         self.play_music()
-        pygame.display.set_caption("一日防疫指揮官")
+        pygame.display.set_caption("Noah's Ark")
         clock = pygame.time.Clock()
         while game_status["run"]:
             game_status["go_start_menu"] = False
