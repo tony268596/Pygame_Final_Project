@@ -28,9 +28,9 @@ locked_button_image = pygame.transform.scale(
 
 # tower base images
 en_base_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "en_tower.png")), (150, 200))
+    pygame.image.load(os.path.join(IMAGE_PATH, "en_tower.png")), (200, 200))
 hero_base_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "tower.png")), (150, 150))
+    pygame.image.load(os.path.join(IMAGE_PATH, "boat.png")), (150, 150))
 
 # skills button images
 UPGRADE_BTN_IMAGE = pygame.transform.scale(
@@ -239,17 +239,33 @@ class GameView:
             godtone_data.fill((0, 0, 0, 64))
             self.win.blit(godtone_data, (430, 395))
 
-            Topic_1 = pygame.font.Font(arial, 30)
-            Topic_1_text = Topic_1.render("   I   am    ", True, WHITE)
-            self.win.blit(Topic_1_text, (433, 385))
+            Topic = pygame.font.Font(arial, 20)
+            Topic_text = Topic.render("Initial ability", True, WHITE)
+            self.win.blit(Topic_text, (433, 385))
 
-            Topic_2 = pygame.font.Font(arial, 30)
-            Topic_2_text = Topic_2.render("  Toyz's   ", True, RED)
-            self.win.blit(Topic_2_text, (435, 420))
+            HP = pygame.font.Font(arial, 20)
+            HP_text = HP.render(" HP = 15", True, WHITE)
+            self.win.blit(HP_text, (433, 410))
 
-            Topic_3 = pygame.font.Font(arial, 30)
-            Topic_3_text = Topic_3.render("    dog   ", True, WHITE)
-            self.win.blit(Topic_3_text, (435, 455))
+            Power = pygame.font.Font(arial, 20)
+            Power_text = Power.render(" Power = 3", True, WHITE)
+            self.win.blit(Power_text, (433, 430))
+
+            Attack_range = pygame.font.Font(arial, 20)
+            Attack_range_text = Attack_range.render(" Range = 60", True, WHITE)
+            self.win.blit(Attack_range_text, (433, 450))
+
+            Cost = pygame.font.Font(arial, 20)
+            Cost_text = Cost.render(" Cost = 70", True, WHITE)
+            self.win.blit(Cost_text, (433, 470))
+
+            # Topic_2 = pygame.font.Font(arial, 30)
+            # Topic_2_text = Topic_2.render("  Toyz's   ", True, RED)
+            # self.win.blit(Topic_2_text, (435, 420))
+
+            # Topic_3 = pygame.font.Font(arial, 30)
+            # Topic_3_text = Topic_3.render("    dog   ", True, WHITE)
+            # self.win.blit(Topic_3_text, (435, 455))
 
             """
             Topic = pygame.font.Font(arial, 22)
@@ -404,9 +420,9 @@ class GameView:
     def draw_mytower_hp(self, lives, max_lives):
         # draw_lives
         pygame.draw.rect(
-            self.win, RED, [870+(HEALTH_WIDTH/max_lives*lives), 340, HEALTH_WIDTH/max_lives*(max_lives-lives), HEALTH_HEIGHT])
+            self.win, SKY_BLUE, [870+(HEALTH_WIDTH/max_lives*lives), 340, HEALTH_WIDTH/max_lives*(max_lives-lives), HEALTH_HEIGHT])
         pygame.draw.rect(
-            self.win, GREEN, [870, 340, HEALTH_WIDTH/max_lives*lives, HEALTH_HEIGHT])
+            self.win, NAVY, [870, 340, HEALTH_WIDTH/max_lives*lives, HEALTH_HEIGHT])
 
     def draw_entower_hp(self, lives, max_lives):
         # draw_lives
