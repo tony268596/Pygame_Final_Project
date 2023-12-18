@@ -426,7 +426,7 @@ class GameView:
         game_over_text = over.render("click to continue...", True, WHITE)
         self.win.blit(transparent_surface, (0, 0))
         self.win.blit(game_over_text, (830, 560))
-        self.win.blit(game_loss_image, (312, 100))
+        self.win.blit(game_loss_image, (0, 0))
 
     def draw_game_win(self):
         transparent_surface = pygame.Surface(
@@ -438,7 +438,7 @@ class GameView:
         game_win_text = over.render("click to continue...", True, WHITE)
         self.win.blit(transparent_surface, (0, 0))
         self.win.blit(game_win_text, (830, 560))
-        self.win.blit(game_win_image, (212, 20))
+        self.win.blit(game_win_image, (0, 0))
 
     def draw_skill_animation(self):
         x1, y1 = self.skill_move_path[self.path_index]
