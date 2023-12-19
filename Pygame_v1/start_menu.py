@@ -5,7 +5,7 @@ from settings import WIN_WIDTH, WIN_HEIGHT, FPS, IMAGE_PATH, SOUND_PATH, game_st
 # from choose_menu import ChooseMenu
 from game.game import Game
 from button import Buttons
-
+from choose_menu import ChooseMenu
 
 pygame.init()
 pygame.mixer.init()
@@ -31,16 +31,17 @@ class StartMenu:
         self.sound.set_volume(0.01)
 
     def play_music(self):
-        pygame.mixer.music.load(os.path.join(SOUND_PATH, "menu1.mp3"))
+        pygame.mixer.music.load(os.path.join(SOUND_PATH, "menu1_v0.mp3"))
         pygame.mixer.music.set_volume(0.3)
         pygame.mixer.music.play(-1)
         
     def play_music_select(self):
-        pygame.mixer.music.load(os.path.join(SOUND_PATH, "level_select.mp3"))
+        pygame.mixer.music.load(os.path.join(SOUND_PATH, "level_select_v0.mp3"))
         pygame.mixer.music.set_volume(0.3)
         pygame.mixer.music.play(-1)
 
     def run(self):
+        pygame.mixer.music.stop()
         self.play_music()
         pygame.display.set_caption("Noah's Ark")
         clock = pygame.time.Clock()
@@ -63,12 +64,14 @@ class StartMenu:
                         music["mute"] = False
                     if self.start_btn.clicked(x, y):
                         pygame.mixer.music.stop()
-                        self.play_music_select()
-                        self.sound.play()
+                        # self.play_music_select()
+                        # self.sound.play()
                         if music["mute"]:
                             pygame.mixer.music.pause()
-                        g = Game()
-                        g.run(checkpoint=1)
+                        # g = Game()
+                        # g.run(checkpoint=1)
+                        c = ChooseMenu()
+                        c.run()
 
             for bt in self.buttons:
                 bt.create_frame(x, y)

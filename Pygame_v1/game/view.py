@@ -42,9 +42,9 @@ SPECIAL_SKILL_BTN_IMAGE = pygame.transform.scale(
 MONEY_IMAGE = pygame.transform.scale(pygame.image.load(
     os.path.join(IMAGE_PATH, "coin.png")), (180, 60))
 game_loss_image = pygame.transform.scale(pygame.image.load(
-    os.path.join(IMAGE_PATH, "game_over_ground.png")), (400, 400))
+    os.path.join(IMAGE_PATH, "game_over_ground.png")), (1024, 600))
 game_win_image = pygame.transform.scale(pygame.image.load(
-    os.path.join(IMAGE_PATH, "win_background.png")), (600, 550))
+    os.path.join(IMAGE_PATH, "win_background.png")), (1024, 600))
 SKILL_ANIMATION_IMAGE = pygame.transform.scale(pygame.image.load(
     os.path.join(IMAGE_PATH, "skilldisplay.png")), (600, 450))
 game_completed_image = pygame.transform.scale(pygame.image.load(
@@ -441,8 +441,8 @@ class GameView:
         over = pygame.font.Font(arial, 30)
         game_over_text = over.render("click to continue...", True, WHITE)
         self.win.blit(transparent_surface, (0, 0))
-        self.win.blit(game_over_text, (830, 560))
         self.win.blit(game_loss_image, (0, 0))
+        self.win.blit(game_over_text, (830, 560))
 
     def draw_game_win(self):
         transparent_surface = pygame.Surface(
@@ -453,8 +453,8 @@ class GameView:
         over = pygame.font.Font(arial, 30)
         game_win_text = over.render("click to continue...", True, WHITE)
         self.win.blit(transparent_surface, (0, 0))
-        self.win.blit(game_win_text, (830, 560))
         self.win.blit(game_win_image, (0, 0))
+        self.win.blit(game_win_text, (830, 560))
 
     def draw_skill_animation(self):
         x1, y1 = self.skill_move_path[self.path_index]
