@@ -16,20 +16,18 @@ class ChooseMenu:
         self.menu_win = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
         # background
         self.bg = pygame.transform.scale(pygame.image.load(os.path.join(
-            IMAGE_PATH, "level_background.png")), (WIN_WIDTH, WIN_HEIGHT))
+            IMAGE_PATH, "level_background_v0.png")), (WIN_WIDTH, WIN_HEIGHT))
         #title and button
         self.title_image = pygame.transform.scale(pygame.image.load(
-            os.path.join(IMAGE_PATH, "choose.png")), (220, 80))
+            os.path.join(IMAGE_PATH, "choose_v0.png")), (400, 125))
         self.level1_image = pygame.transform.scale(pygame.image.load(
-            os.path.join(IMAGE_PATH, "level_1.png")), (150, 80))
+            os.path.join(IMAGE_PATH, "raft_1.png")), (150, 80)) #level_1.png
         self.level2_image = pygame.transform.scale(pygame.image.load(
-            os.path.join(IMAGE_PATH, "level_2.png")), (150, 80))
+            os.path.join(IMAGE_PATH, "raft_2.png")), (150, 80)) #level_2.png
         self.level3_image = pygame.transform.scale(pygame.image.load(
-            os.path.join(IMAGE_PATH, "level_3.png")), (150, 80))
+            os.path.join(IMAGE_PATH, "raft_3.png")), (150, 80)) #level_3.png
         self.back_image = pygame.transform.scale(
-            pygame.image.load(os.path.join(IMAGE_PATH, "back.png")), (80, 80))
-        self.back_image = pygame.transform.scale(
-            pygame.image.load(os.path.join(IMAGE_PATH, "back.png")), (80, 80))
+            pygame.image.load(os.path.join(IMAGE_PATH, "back_v0.png")), (80, 80))
         self.lock_image = pygame.transform.scale(
             pygame.image.load(os.path.join(IMAGE_PATH, "lock.png")), (80, 80))
         # button
@@ -59,7 +57,7 @@ class ChooseMenu:
         self.buttons.append(button)
 
     def play_music(self):
-        pygame.mixer.music.load(os.path.join(SOUND_PATH, "menu1.mp3"))
+        pygame.mixer.music.load(os.path.join(SOUND_PATH, "menu1_v0.mp3"))
         pygame.mixer.music.set_volume(0.3)
         pygame.mixer.music.play(-1)
 
@@ -79,7 +77,7 @@ class ChooseMenu:
         pygame.mixer.music.play(-1)
         
     def play_music_select(self):
-        pygame.mixer.music.load(os.path.join(SOUND_PATH, "level_select.mp3"))
+        pygame.mixer.music.load(os.path.join(SOUND_PATH, "level_select_v0.mp3"))
         pygame.mixer.music.set_volume(0.3)
         pygame.mixer.music.play(-1)
 
@@ -97,10 +95,10 @@ class ChooseMenu:
 
             clock.tick(FPS)
             self.menu_win.blit(self.bg, (0, 0))
-            self.menu_win.blit(self.title_image, (402, 30))
-            self.menu_win.blit(self.level1_image, (437, 180))
-            self.menu_win.blit(self.level2_image, (437, 300))
-            self.menu_win.blit(self.level3_image, (437, 420))
+            self.menu_win.blit(self.title_image, (312, 30))
+            self.menu_win.blit(self.level1_image, (437, 180)) #(437, 180)
+            self.menu_win.blit(self.level2_image, (437, 300)) #(437, 300)
+            self.menu_win.blit(self.level3_image, (437, 420)) #(437, 420)
             game = Game()
             transparent_surface = pygame.Surface(
                 self.menu_win.get_size(), pygame.SRCALPHA)  # 製作畫布
@@ -149,9 +147,12 @@ class ChooseMenu:
 
                     if self.back_or_not(x, y):
                         pygame.mixer.music.stop()
-                        self.play_music_select()
+                        self.play_music()
                         #self.mute()
-                        game_status["go_input_window"] = True
+                        ####
+                        ##game_status["go_input_window"] = True
+                        ####
+                        game_status["go_start_menu"] = True
             for bt in self.buttons:
                 x, y = pygame.mouse.get_pos()
                 bt.create_frame(x, y)

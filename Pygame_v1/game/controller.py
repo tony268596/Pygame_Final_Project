@@ -112,7 +112,7 @@ class GameControl:
             self.view.draw_finish_win()
 
     def play_music_select(self):
-        pygame.mixer.music.load(os.path.join(SOUND_PATH, "level_select.mp3"))
+        pygame.mixer.music.load(os.path.join(SOUND_PATH, "level_select_v0.mp3"))
         pygame.mixer.music.set_volume(0.3)
         pygame.mixer.music.play(-1)
 
