@@ -34,10 +34,8 @@ class Enemy:
         
         
     def type_en(self, point):
-        #if point == 1 or point == 2:
-        return random.randint(1, 3)
-        # elif point == 3:
-        #     return 5
+        # return random.randint(1, 3)
+        return 2
 
     def move(self):
         x1, y1 = self.path[self.path_index]
@@ -131,7 +129,7 @@ class Enemy:
             elif(point == 2):
                 return entype_one_speed[1]
         elif(entype == 2):
-            entype_two_speed = [0.6, 0.8]
+            entype_two_speed = [1.5, 0.8]
             if(point == 1):
                 return entype_two_speed[0]
             elif(point == 2):
@@ -152,7 +150,7 @@ class Enemy:
         if(entype == 1):
             return 120
         elif(entype == 2):
-            return 240
+            return 100
         elif(entype == 3):
             return 180
         # elif(entype == 4):
@@ -177,7 +175,7 @@ class Enemy:
         if(entype == 1):
             return 60
         elif(entype == 2):
-            return 150
+            return 60
         elif(entype == 3):
             return 60
         elif(entype == 4):
@@ -211,7 +209,7 @@ class EnemyGroup:
             return True
         return False
     
-
+    # attack_light=1會閃, attack_light=0 不會刪
     def advance(self, model):
         self.campaign()
         self.sort_list()
@@ -222,7 +220,7 @@ class EnemyGroup:
             if self.en_to_base_range(en):
                 if en.attack(model) and model.mytower_hp > 0:
                     model.mytower_hp -= en.power
-                    en.attack_light = 1
+                    en.attack_light = 0
                 elif model.mytower_hp <= 0:
                     model.entower_hp = 0
                     en.attack_light = 0
@@ -233,7 +231,8 @@ class EnemyGroup:
                     if self.en_to_hero_range(he, en):
                         if(en.attack(model)):
                             he.health -= en.power
-                            en.attack_light = 1
+                            # en.attack_light = 1
+                            en.attack_light = 0
                             break
                         else:
                             en.attack_light = 0

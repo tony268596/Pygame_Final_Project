@@ -23,8 +23,8 @@ howhow_button_image = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "dog-1.png")), (80, 80))
 brian_button_image = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "brian_btn.jpg")), (80, 80))
-locked_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "locked.png")), (80, 80))
+# locked_button_image = pygame.transform.scale(
+#     pygame.image.load(os.path.join(IMAGE_PATH, "locked.png")), (80, 80))
 
 # tower base images
 en_base_image = pygame.transform.scale(
@@ -35,8 +35,8 @@ hero_base_image = pygame.transform.scale(
 # skills button images
 UPGRADE_BTN_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "upgrade.png")), (160, 50))
-SPECIAL_SKILL_BTN_IMAGE = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "skill.png")), (160, 50))
+# SPECIAL_SKILL_BTN_IMAGE = pygame.transform.scale(
+#     pygame.image.load(os.path.join(IMAGE_PATH, "skill.png")), (160, 50))
 
 # in-game status images
 MONEY_IMAGE = pygame.transform.scale(pygame.image.load(
@@ -76,21 +76,24 @@ class GameView:
         heromenu_background.fill((0, 0, 0, 64))
         self.win.blit(heromenu_background, (0, 500))
         pygame.draw.rect(self.win, BLACK, [315, 510, 80, 80], 10)
+        pygame.draw.rect(self.win, GRAY, [320, 515, 70, 70], 5)
         pygame.draw.rect(self.win, BLACK, [435, 510, 80, 80], 10)
+        pygame.draw.rect(self.win, GRAY, [440, 515, 70, 70], 5)
         pygame.draw.rect(self.win, BLACK, [555, 510, 80, 80], 10)
-        pygame.draw.rect(self.win, BLACK, [195, 510, 80, 80], 10)
+        pygame.draw.rect(self.win, GRAY, [560, 515, 70, 70], 5)
+        # pygame.draw.rect(self.win, BLACK, [195, 510, 80, 80], 10)
         self.win.blit(p_button_image, (315, 510))
         self.win.blit(godtone_button_image, (435, 510))
         self.win.blit(howhow_button_image, (555, 510))
-        self.win.blit(locked_button_image, (195, 510))
-        if self.point == 1:
-            self.win.blit(locked_button_image, (195, 510))
-        else:
-            self.win.blit(brian_button_image, (195, 510))
+        # self.win.blit(locked_button_image, (195, 510))
+        # if self.point == 1:
+        #     self.win.blit(locked_button_image, (195, 510))
+        # else:
+        #     self.win.blit(brian_button_image, (195, 510))
         self.win.blit(en_base_image, (0, 300))
         self.win.blit(hero_base_image, (875, 350))
         self.win.blit(UPGRADE_BTN_IMAGE, (675, 500))
-        self.win.blit(SPECIAL_SKILL_BTN_IMAGE, (675, 550))
+        # self.win.blit(SPECIAL_SKILL_BTN_IMAGE, (675, 550))
 
     def draw_enemies(self, enemies):
         for en in enemies.get():
@@ -320,43 +323,45 @@ class GameView:
             self.win.blit(Cost_text, (195, 470))
 
     def draw_locked_brian(self):
-        x, y = pygame.mouse.get_pos()
-        locked_btn_rect = locked_button_image.get_rect()
-        locked_btn_rect.center = (235, 550)
-        if (locked_btn_rect.collidepoint(x, y)):
-            brian_data = pygame.Surface((155, 100), pygame.SRCALPHA)
-            brian_data.fill((0, 0, 0, 64))
-            self.win.blit(brian_data, (190, 390))
+        # x, y = pygame.mouse.get_pos()
+        # locked_btn_rect = locked_button_image.get_rect()
+        # locked_btn_rect.center = (235, 550)
+        # if (locked_btn_rect.collidepoint(x, y)):
+        #     brian_data = pygame.Surface((155, 100), pygame.SRCALPHA)
+        #     brian_data.fill((0, 0, 0, 64))
+        #     self.win.blit(brian_data, (190, 390))
 
-            Topic_1 = pygame.font.Font(arial, 20)
-            Topic_1_text = Topic_1.render(" This hero will", True, WHITE)
-            self.win.blit(Topic_1_text, (190, 395))
+        #     Topic_1 = pygame.font.Font(arial, 20)
+        #     Topic_1_text = Topic_1.render(" This hero will", True, WHITE)
+        #     self.win.blit(Topic_1_text, (190, 395))
 
-            Topic_2 = pygame.font.Font(arial, 20)
-            Topic_2_text = Topic_2.render(" be unclocked", True, WHITE)
-            self.win.blit(Topic_2_text, (190, 430))
+        #     Topic_2 = pygame.font.Font(arial, 20)
+        #     Topic_2_text = Topic_2.render(" be unclocked", True, WHITE)
+        #     self.win.blit(Topic_2_text, (190, 430))
 
-            Topic_3 = pygame.font.Font(arial, 20)
-            Topic_3_text = Topic_3.render(
-                " in further checkpoint", True, WHITE)
-            self.win.blit(Topic_3_text, (190, 465))
+        #     Topic_3 = pygame.font.Font(arial, 20)
+        #     Topic_3_text = Topic_3.render(
+        #         " in further checkpoint", True, WHITE)
+        #     self.win.blit(Topic_3_text, (190, 465))
+        pass
 
     def draw_skill_data(self):
-        x, y = pygame.mouse.get_pos()
-        skill_btn_rect = SPECIAL_SKILL_BTN_IMAGE.get_rect()
-        skill_btn_rect.center = (755, 575)
-        if(skill_btn_rect.collidepoint(x, y)):
-            skill_data = pygame.Surface((185, 50), pygame.SRCALPHA)
-            skill_data.fill((0, 0, 0, 128))
-            self.win.blit(skill_data, (835, 500))
+        # x, y = pygame.mouse.get_pos()
+        # skill_btn_rect = SPECIAL_SKILL_BTN_IMAGE.get_rect()
+        # skill_btn_rect.center = (755, 575)
+        # if(skill_btn_rect.collidepoint(x, y)):
+        #     skill_data = pygame.Surface((185, 50), pygame.SRCALPHA)
+        #     skill_data.fill((0, 0, 0, 128))
+        #     self.win.blit(skill_data, (835, 500))
 
-            Cost = pygame.font.Font(arial, 20)
-            Cost_text = Cost.render("Cost = 200", True, WHITE)
-            self.win.blit(Cost_text, (840, 505))
+        #     Cost = pygame.font.Font(arial, 20)
+        #     Cost_text = Cost.render("Cost = 200", True, WHITE)
+        #     self.win.blit(Cost_text, (840, 505))
 
-            Ability = pygame.font.Font(arial, 20)
-            Ability_text = Ability.render("Enemy's hp is halved", True, WHITE)
-            self.win.blit(Ability_text, (840, 525))
+        #     Ability = pygame.font.Font(arial, 20)
+        #     Ability_text = Ability.render("Enemy's hp is halved", True, WHITE)
+        #     self.win.blit(Ability_text, (840, 525))
+        pass
 
     def draw_upgrade_data(self):
         x, y = pygame.mouse.get_pos()
