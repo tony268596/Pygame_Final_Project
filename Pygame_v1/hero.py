@@ -48,9 +48,9 @@ BRIAN_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH,
                pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "brian6.png")), (50, 100))]
 
 HOWHOW_PUNCH_IMAGE = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "punch.png")), (50, 50))
+    pygame.image.load(os.path.join(IMAGE_PATH, "bite.png")), (50, 50))
 GODTONE_PUNCH_IMAGE = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "punch2.png")), (50, 50))
+    pygame.image.load(os.path.join(IMAGE_PATH, "sword.png")), (50, 50))
 P_PUNCH_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "targeting.png")), (50, 50))
 BRIAN_PUNCH_IMAGE = pygame.transform.scale(

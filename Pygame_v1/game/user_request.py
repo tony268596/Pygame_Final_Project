@@ -67,7 +67,7 @@ class Muse:
 class Hero_howhow:
     def __init__(self, subject):
         subject.register(self)
-        self.howhow_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"howhow_sound.mp3"))
+        self.howhow_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"dog1a.mp3"))
     def update(self, user_request: str, model):
         if user_request == "howhow":
             if model.money >= 5:
@@ -80,13 +80,13 @@ class Hero_howhow:
 class Hero_godtone:
     def __init__(self, subject):
         subject.register(self)
-        self.godtone_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"tone_sound.mp3"))
+        self.godtone_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"run1.mp3"))
     def update(self, user_request: str, model):
         if user_request == "godtone":
             if model.money >= 10:
                 model.money -= 10
                 model.heros.add("godtone", model.hero_level)
-                self.godtone_music.set_volume(0.03)
+                self.godtone_music.set_volume(0.3)
                 pygame.mixer.Channel(2).play(self.godtone_music)
                 print('summon godtone')
 
@@ -94,7 +94,7 @@ class Hero_godtone:
 class Hero_p:
     def __init__(self, subject):
         subject.register(self)
-        self.p_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"p_sound.mp3"))
+        self.p_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"boat_engine.mp3"))
     def update(self, user_request: str, model):
         if user_request == "p":
             if model.money >= 20:
