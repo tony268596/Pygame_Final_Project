@@ -33,7 +33,7 @@ en_BASE = pygame.Rect(0, 300, 150, 200)
 # 絕對路徑
 IMAGE_PATH = os.path.join(os.path.dirname(__file__), "images")
 SOUND_PATH = os.path.join(os.path.dirname(__file__), "sound")
-BACKGROUND_IMAGE = pygame.image.load(os.path.join(IMAGE_PATH, "dessert.jpg"))
+BACKGROUND_IMAGE = pygame.image.load(os.path.join(IMAGE_PATH, "game_bg.png"))
 BACKGROUND_IMAGE_two = pygame.image.load(os.path.join(IMAGE_PATH, "mars.jpg"))
 BACKGROUND_IMAGE_three = pygame.image.load(os.path.join(IMAGE_PATH, "egypt.jpg"))
 RECORD_PATH = os.path.join(os.path.dirname(__file__), "user_record")
