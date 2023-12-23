@@ -21,8 +21,8 @@ class StartMenu:
 
         # button
         self.start_btn = Buttons(393, 373, 240, 80)
-        self.sound_btn = Buttons(833, 493, 80, 82)
-        self.mute_btn = Buttons(933, 493, 80, 82)
+        self.sound_btn = Buttons(840, 497, 80, 80)
+        self.mute_btn = Buttons(938, 497, 80, 80)
         self.buttons = [self.start_btn,
                         self.sound_btn,
                         self.mute_btn]
