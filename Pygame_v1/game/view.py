@@ -46,6 +46,8 @@ UPGRADE_BTN_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "upgrade_btn.png")), (80, 80))
 SPECIAL_SKILL_BTN_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "skill.png")), (160, 50))
+SCORE_LOG_IMAGE = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "score.png")), (160, 50))
 
 # in-game status images
 MONEY_IMAGE = pygame.transform.scale(pygame.image.load(
@@ -81,9 +83,9 @@ class GameView:
             self.win.blit(bg_two, (0, 0))
         elif(self.point == 3):
             self.win.blit(bg_three, (0, 0))
-        heromenu_background = pygame.Surface((WIN_WIDTH, 100), pygame.SRCALPHA)
+        heromenu_background = pygame.Surface((WIN_WIDTH, 140), pygame.SRCALPHA)
         heromenu_background.fill((0, 0, 0, 64))
-        self.win.blit(heromenu_background, (0, 500))
+        self.win.blit(heromenu_background, (0, WIN_HEIGHT - 140))
         # pygame.draw.rect(self.win, BLACK, [315, 510, 80, 80], 10)
         # pygame.draw.rect(self.win, BLACK, [435, 510, 80, 80], 10)
         # pygame.draw.rect(self.win, BLACK, [555, 510, 80, 80], 10)
@@ -91,14 +93,15 @@ class GameView:
         self.win.blit(captain_button_image, (315, 510))
         self.win.blit(sailor_button_image, (435, 510))
         self.win.blit(dog_button_image, (555, 510))
+        self.win.blit(SCORE_LOG_IMAGE,(WIN_WIDTH/2 - 60, WIN_HEIGHT - 140))
         # if self.point == 1:
         #     self.win.blit(locked_button_image, (195, 510))
         # else:
         #     self.win.blit(brian_button_image, (195, 510))
-        self.win.blit(en_base_image, (0, 330))
-        self.win.blit(hero_base_image, (875, 350))
+        self.win.blit(en_base_image, (0, 280))
+        self.win.blit(hero_base_image, (875, 300))
 
-        ''' upgrade btn'''
+        ''' btn of upgrade '''
         self.win.blit(UPGRADE_BTN_IMAGE, (675, 510))
         # self.win.blit(SPECIAL_SKILL_BTN_IMAGE, (675, 550))
 
@@ -432,9 +435,9 @@ class GameView:
     def draw_mytower_hp(self, lives, max_lives):
         # draw_lives
         pygame.draw.rect(
-            self.win, SKY_BLUE, [870+(HEALTH_WIDTH/max_lives*lives), 340, HEALTH_WIDTH/max_lives*(max_lives-lives), HEALTH_HEIGHT])
+            self.win, SKY_BLUE, [870+(HEALTH_WIDTH/max_lives*lives), 280, HEALTH_WIDTH/max_lives*(max_lives-lives), HEALTH_HEIGHT])
         pygame.draw.rect(
-            self.win, NAVY, [870, 340, HEALTH_WIDTH/max_lives*lives, HEALTH_HEIGHT])
+            self.win, NAVY, [870, 280, HEALTH_WIDTH/max_lives*lives, HEALTH_HEIGHT])
 
     def draw_entower_hp(self, lives, max_lives):
         # draw_lives
@@ -514,7 +517,7 @@ class GameView:
         self.win.blit(time_text, (WIN_WIDTH-180, WIN_HEIGHT-65))
 
     def draw_score(self, score):
-        score_font = pygame.font.Font(arial, 40)
+        score_font = pygame.font.Font(arial, 28)
         self.score = 1000
-        score_text = score_font.render(f"Score: {score} / 1000", True, WHITE)
-        self.win.blit(score_text, (WIN_WIDTH-250, WIN_HEIGHT-580))
+        score_text = score_font.render(f"{score} / 1000", True, WHITE)
+        self.win.blit(score_text, (WIN_WIDTH / 2 - 15, WIN_HEIGHT-125))
