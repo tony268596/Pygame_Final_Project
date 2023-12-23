@@ -21,7 +21,7 @@ class Enemy:
         self.max_health = self.health
         self.power = self.enemy_power(self.en_type, self.point)
         self.stride = self.move_speed(self.en_type, self.point)
-        self.path = en_PATH
+        self.path = random.choice(en_PATH)
         self.move_count = 0
         self.path_index = 0
         self.rect = self.image.get_rect()

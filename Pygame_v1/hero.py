@@ -61,7 +61,7 @@ class Hero:
     def __init__(self, herotype, herolevel):
         self.hero_type = herotype
         self.herolevel = herolevel
-        self.path = hero_PATH
+        self.path = random.choice(hero_PATH)
         self.path_index = 0
         self.move_count = 0
         self.upgrade = [1, 1.15, 1.3, 1.5]
@@ -108,7 +108,6 @@ class Hero:
         else:
             self.move_count = 0
             self.rect.center = self.path[self.path_index]
-        # print(f"\n\n{(self.rect.center)}\n\n")
 
         if self.hero_type == 'howhow':
             self.image = self.hero_image(self.hero_type)[
@@ -192,7 +191,7 @@ class Hero:
 
     def hero_power(self, herotype):
         if(herotype == 'howhow'):
-            return 2
+            return 1
         elif(herotype == 'godtone'):
             return 3
         elif(herotype == 'p'):
@@ -216,7 +215,7 @@ class Hero:
 
     def attack_max_cd(self, herotype):
         if(herotype == 'howhow'):
-            return 70
+            return 85
         elif(herotype == 'godtone'):
             return 100
         elif(herotype == 'p'):
@@ -336,15 +335,17 @@ class HeroGroup:
                 self.expedition[i] = temp
 
     def add(self, herotype, herolevel):
-        """Generate the enemies for next wave"""
+        new_hero = None
         if herotype == 'howhow':
-            self.expedition.append(Hero('howhow', herolevel))
+            new_hero = Hero('howhow', herolevel)
         elif herotype == 'godtone':
-            self.expedition.append(Hero('godtone', herolevel))
+            new_hero = Hero('godtone', herolevel)
         elif herotype == 'p':
-            self.expedition.append(Hero('p', herolevel))
+            new_hero = Hero('p', herolevel)
         elif herotype == 'brian':
-            self.expedition.append(Hero('brian', herolevel))
+            new_hero = Hero('brian', herolevel)
+        if new_hero:
+            self.expedition.append(new_hero)
 
     def get(self):
         """Get the enemy list"""

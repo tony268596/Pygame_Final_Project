@@ -168,7 +168,6 @@ class GameView:
     def draw_heros(self, heros):
         for hero in heros.get():
             self.win.blit(hero.image, hero.rect)
-            print(f"\nherroo:{hero.rect}\n")
             # draw health bar
             bar_width = hero.rect.w * (hero.health / hero.max_health)
             max_bar_width = hero.rect.w
