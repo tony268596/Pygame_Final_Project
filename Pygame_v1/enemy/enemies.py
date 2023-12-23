@@ -81,13 +81,13 @@ class Enemy:
             elif(point == 2):
                 return entype_one_hp[1]
         elif(entype == 2):
-            entype_two_hp = [10, 15]
+            entype_two_hp = [15, 15]
             if(point == 1):
                 return entype_two_hp[0]
             elif(point == 2):
                 return entype_two_hp[1]
         elif(entype == 3):
-            entype_three_hp = [14, 18]
+            entype_three_hp = [10, 18]
             if(point == 1):
                 return entype_three_hp[0]
             elif(point == 2):
@@ -100,19 +100,19 @@ class Enemy:
     # 攻擊力    
     def enemy_power(self, entype, point):
         if(entype == 1):
-            entype_one_power = [3, 5]
+            entype_one_power = [10, 5]
             if(point == 1):
                 return entype_one_power[0]
             elif(point == 2):
                 return entype_one_power[1]
         elif(entype == 2):
-            entype_two_power = [6, 8]
+            entype_two_power = [12, 8]
             if(point == 1):
                 return entype_two_power[0]
             elif(point == 2):
                 return entype_two_power[1]
         elif(entype == 3):
-            entype_three_power = [2, 4]
+            entype_three_power = [8, 4]
             if(point == 1):
                 return entype_three_power[0]
             elif(point == 2):
@@ -125,19 +125,19 @@ class Enemy:
     # 移動速度    
     def move_speed(self, entype, point):
         if(entype == 1):
-            entype_one_speed = [1, 1.2]
+            entype_one_speed = [2, 1.2]
             if(point == 1):
                 return entype_one_speed[0]
             elif(point == 2):
                 return entype_one_speed[1]
         elif(entype == 2):
-            entype_two_speed = [0.6, 0.8]
+            entype_two_speed = [1.5, 0.8]
             if(point == 1):
                 return entype_two_speed[0]
             elif(point == 2):
                 return entype_two_speed[1]
         elif(entype == 3):
-            entype_three_speed = [1.5, 1.8]
+            entype_three_speed = [2.2, 1.8]
             if(point == 1):
                 return entype_three_speed[0]
             elif(point == 2):
@@ -150,11 +150,11 @@ class Enemy:
     # 攻擊最大冷卻    
     def attack_max_cd(self, entype):
         if(entype == 1):
-            return 120
+            return 100
         elif(entype == 2):
-            return 240
+            return 170
         elif(entype == 3):
-            return 180
+            return 70
         # elif(entype == 4):
         #     return 600
         # elif(entype == 5):
@@ -179,7 +179,7 @@ class Enemy:
         elif(entype == 2):
             return 150
         elif(entype == 3):
-            return 60
+            return 90
         elif(entype == 4):
             return 60
         elif(entype == 5):
@@ -222,7 +222,7 @@ class EnemyGroup:
             if self.en_to_base_range(en):
                 if en.attack(model) and model.mytower_hp > 0:
                     model.mytower_hp -= en.power
-                    en.attack_light = 1
+                    en.attack_light = 0
                 elif model.mytower_hp <= 0:
                     model.entower_hp = 0
                     en.attack_light = 0
@@ -233,7 +233,7 @@ class EnemyGroup:
                     if self.en_to_hero_range(he, en):
                         if(en.attack(model)):
                             he.health -= en.power
-                            en.attack_light = 1
+                            en.attack_light = 0
                             break
                         else:
                             en.attack_light = 0

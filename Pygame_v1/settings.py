@@ -1,5 +1,6 @@
 import pygame
 import os
+import random
 
 # screen size
 WIN_WIDTH = 1024

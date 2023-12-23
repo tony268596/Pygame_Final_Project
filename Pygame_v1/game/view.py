@@ -3,6 +3,7 @@ from settings import WIN_WIDTH, WIN_HEIGHT, BACKGROUND_IMAGE, BACKGROUND_IMAGE_t
 from color_settings import *
 import os
 import math
+import random
 
 arial = pygame.font.match_font('arial')
 
@@ -86,18 +87,10 @@ class GameView:
         heromenu_background = pygame.Surface((WIN_WIDTH, 100), pygame.SRCALPHA)
         heromenu_background.fill((0, 0, 0, 64))
         self.win.blit(heromenu_background, (0, WIN_HEIGHT - 100))
-        # pygame.draw.rect(self.win, BLACK, [315, 510, 80, 80], 10)
-        # pygame.draw.rect(self.win, BLACK, [435, 510, 80, 80], 10)
-        # pygame.draw.rect(self.win, BLACK, [555, 510, 80, 80], 10)
-        # pygame.draw.rect(self.win, BLACK, [195, 510, 80, 80], 10)
         self.win.blit(captain_button_image, (315, 510))
         self.win.blit(sailor_button_image, (435, 510))
         self.win.blit(dog_button_image, (555, 510))
         self.win.blit(SCORE_LOG_IMAGE,(WIN_WIDTH/2 - 80, 0))
-        # if self.point == 1:
-        #     self.win.blit(locked_button_image, (195, 510))
-        # else:
-        #     self.win.blit(brian_button_image, (195, 510))
         self.win.blit(en_base_image, (0, 280))
         self.win.blit(hero_base_image, (875, 300))
 
@@ -175,6 +168,7 @@ class GameView:
     def draw_heros(self, heros):
         for hero in heros.get():
             self.win.blit(hero.image, hero.rect)
+            print(f"\nherroo:{hero.rect}\n")
             # draw health bar
             bar_width = hero.rect.w * (hero.health / hero.max_health)
             max_bar_width = hero.rect.w
@@ -189,8 +183,8 @@ class GameView:
         p_btn_rect = p_button_image.get_rect()
         p_btn_rect.center = (355, 550)
         if(p_btn_rect.collidepoint(x, y)):
-            p_data = pygame.Surface((110, 100), pygame.SRCALPHA)
-            p_data.fill((0, 0, 0, 64))
+            p_data = pygame.Surface((130, 105), pygame.SRCALPHA)
+            p_data.fill((0, 0, 0, 170))
             self.win.blit(p_data, (310, 390))
 
             Topic = pygame.font.Font(arial, 22)
@@ -219,8 +213,8 @@ class GameView:
         howhow_btn_rect = howhow_button_image.get_rect()
         howhow_btn_rect.center = (595, 550)
         if(howhow_btn_rect.collidepoint(x, y)):
-            howhow_data = pygame.Surface((100, 100), pygame.SRCALPHA)
-            howhow_data.fill((0, 0, 0, 64))
+            howhow_data = pygame.Surface((130, 105), pygame.SRCALPHA)
+            howhow_data.fill((0, 0, 0, 170))
             self.win.blit(howhow_data, (550, 390))
 
             Topic = pygame.font.Font(arial, 22)
@@ -248,13 +242,13 @@ class GameView:
         godtone_btn_rect = godtone_button_image.get_rect()
         godtone_btn_rect.center = (475, 550)
         if(godtone_btn_rect.collidepoint(x, y)):
-            godtone_data = pygame.Surface((100, 95), pygame.SRCALPHA)
-            godtone_data.fill((0, 0, 0, 64))
-            self.win.blit(godtone_data, (430, 395))
+            godtone_data = pygame.Surface((130, 105), pygame.SRCALPHA)
+            godtone_data.fill((0, 0, 0, 170))
+            self.win.blit(godtone_data, (430, 390))
 
-            Topic = pygame.font.Font(arial, 20)
+            Topic = pygame.font.Font(arial, 22)
             Topic_text = Topic.render("Initial ability", True, WHITE)
-            self.win.blit(Topic_text, (433, 385))
+            self.win.blit(Topic_text, (433, 390))
 
             HP = pygame.font.Font(arial, 20)
             HP_text = HP.render(" HP = 15", True, WHITE)
@@ -376,28 +370,32 @@ class GameView:
     def draw_upgrade_data(self):
         x, y = pygame.mouse.get_pos()
         upgrade_btn_rect = UPGRADE_BTN_IMAGE.get_rect()
-        upgrade_btn_rect.center = (755, 525)
+        upgrade_btn_rect.center = (715, 550)
         if(upgrade_btn_rect.collidepoint(x, y)):
-            upgrade_data = pygame.Surface((185, 90), pygame.SRCALPHA)
-            upgrade_data.fill((0, 0, 0, 128))
-            self.win.blit(upgrade_data, (835, 500))
+            upgrade_data = pygame.Surface((200, 105), pygame.SRCALPHA)
+            upgrade_data.fill((0, 0, 0, 170))
+            self.win.blit(upgrade_data, (670, 390))
+
+            upgrade = pygame.font.Font(arial, 20)
+            upgrade_text = upgrade.render("Upgrade", True, WHITE)
+            self.win.blit(upgrade_text, (673, 390))
 
             Initial = pygame.font.Font(arial, 20)
             Initial_text = Initial.render("Initial level = 0", True, WHITE)
-            self.win.blit(Initial_text, (840, 505))
+            self.win.blit(Initial_text, (673, 410))
 
             Max = pygame.font.Font(arial, 20)
             Max_text = Max.render("Max level = 3", True, WHITE)
-            self.win.blit(Max_text, (840, 525))
+            self.win.blit(Max_text, (673, 430))
 
             Cost = pygame.font.Font(arial, 20)
             Cost_text = Cost.render("Cost = 100,150,200", True, WHITE)
-            self.win.blit(Cost_text, (840, 545))
+            self.win.blit(Cost_text, (673, 450))
 
             Upgrade_mul = pygame.font.Font(arial, 20)
             Upgrade_mul_text = Upgrade_mul.render(
                 "power and hp * 1.15", True, WHITE)
-            self.win.blit(Upgrade_mul_text, (840, 565))
+            self.win.blit(Upgrade_mul_text, (673, 470))
 
     def draw_menu(self, menu):
         self.win.blit(menu.image, menu.rect)
@@ -514,7 +512,7 @@ class GameView:
     def draw_game_time(self, time):
         timer = pygame.font.Font(arial, 40)
         time_text = timer.render(f"time: {time}", True, WHITE)
-        self.win.blit(time_text, (WIN_WIDTH-180, WIN_HEIGHT-65))
+        self.win.blit(time_text, (WIN_WIDTH-220, WIN_HEIGHT-65))
 
     def draw_score(self, score):
         score_font = pygame.font.Font(arial, 28)

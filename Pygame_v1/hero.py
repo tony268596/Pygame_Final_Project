@@ -3,7 +3,7 @@ import math
 import os
 from settings import hero_PATH, en_BASE, IMAGE_PATH, SOUND_PATH
 from color_settings import *
-#import random
+import random
 
 # pygame.init()
 HOWHOW_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "dog-1.png")), (60, 90)),
@@ -108,6 +108,7 @@ class Hero:
         else:
             self.move_count = 0
             self.rect.center = self.path[self.path_index]
+        # print(f"\n\n{(self.rect.center)}\n\n")
 
         if self.hero_type == 'howhow':
             self.image = self.hero_image(self.hero_type)[
@@ -191,9 +192,9 @@ class Hero:
 
     def hero_power(self, herotype):
         if(herotype == 'howhow'):
-            return 3
-        elif(herotype == 'godtone'):
             return 2
+        elif(herotype == 'godtone'):
+            return 3
         elif(herotype == 'p'):
             return 7
         elif(herotype == 'brian'):
@@ -215,11 +216,11 @@ class Hero:
 
     def attack_max_cd(self, herotype):
         if(herotype == 'howhow'):
-            return 60
+            return 70
         elif(herotype == 'godtone'):
-            return 60
-        elif(herotype == 'p'):
             return 100
+        elif(herotype == 'p'):
+            return 150
         elif(herotype == 'brian'):
             return 20
 
