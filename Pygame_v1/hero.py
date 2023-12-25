@@ -3,7 +3,7 @@ import math
 import os
 from settings import hero_PATH, en_BASE, IMAGE_PATH, SOUND_PATH
 from color_settings import *
-#import random
+import random
 
 # pygame.init()
 HOWHOW_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "dog-1.png")), (60, 90)),
@@ -48,9 +48,9 @@ BRIAN_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH,
                pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "brian6.png")), (50, 100))]
 
 HOWHOW_PUNCH_IMAGE = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "punch.png")), (50, 50))
+    pygame.image.load(os.path.join(IMAGE_PATH, "bite.png")), (50, 50))
 GODTONE_PUNCH_IMAGE = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "punch2.png")), (50, 50))
+    pygame.image.load(os.path.join(IMAGE_PATH, "sword.png")), (50, 50))
 P_PUNCH_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "targeting.png")), (50, 50))
 BRIAN_PUNCH_IMAGE = pygame.transform.scale(
@@ -61,7 +61,7 @@ class Hero:
     def __init__(self, herotype, herolevel):
         self.hero_type = herotype
         self.herolevel = herolevel
-        self.path = hero_PATH
+        self.path = random.choice(hero_PATH)
         self.path_index = 0
         self.move_count = 0
         self.upgrade = [1, 1.15, 1.3, 1.5]
@@ -191,9 +191,9 @@ class Hero:
 
     def hero_power(self, herotype):
         if(herotype == 'howhow'):
-            return 3
+            return 1
         elif(herotype == 'godtone'):
-            return 2
+            return 3
         elif(herotype == 'p'):
             return 7
         elif(herotype == 'brian'):
@@ -215,11 +215,11 @@ class Hero:
 
     def attack_max_cd(self, herotype):
         if(herotype == 'howhow'):
-            return 60
+            return 85
         elif(herotype == 'godtone'):
-            return 60
-        elif(herotype == 'p'):
             return 100
+        elif(herotype == 'p'):
+            return 150
         elif(herotype == 'brian'):
             return 20
 
@@ -335,15 +335,17 @@ class HeroGroup:
                 self.expedition[i] = temp
 
     def add(self, herotype, herolevel):
-        """Generate the enemies for next wave"""
+        new_hero = None
         if herotype == 'howhow':
-            self.expedition.append(Hero('howhow', herolevel))
+            new_hero = Hero('howhow', herolevel)
         elif herotype == 'godtone':
-            self.expedition.append(Hero('godtone', herolevel))
+            new_hero = Hero('godtone', herolevel)
         elif herotype == 'p':
-            self.expedition.append(Hero('p', herolevel))
+            new_hero = Hero('p', herolevel)
         elif herotype == 'brian':
-            self.expedition.append(Hero('brian', herolevel))
+            new_hero = Hero('brian', herolevel)
+        if new_hero:
+            self.expedition.append(new_hero)
 
     def get(self):
         """Get the enemy list"""
