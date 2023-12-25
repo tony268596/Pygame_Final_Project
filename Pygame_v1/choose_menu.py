@@ -29,7 +29,7 @@ class ChooseMenu:
         self.back_image = pygame.transform.scale(
             pygame.image.load(os.path.join(IMAGE_PATH, "back_v0.png")), (80, 80))
         self.lock_image = pygame.transform.scale(
-            pygame.image.load(os.path.join(IMAGE_PATH, "lock.png")), (80, 80))
+            pygame.image.load(os.path.join(IMAGE_PATH, "raft_locked_dark.png")), (150, 80))
         # button
         self.level1_btn = Buttons(437, 180, 150, 80)  # x, y, width, height
         self.level2_btn = Buttons(437, 300, 150, 80)
@@ -105,19 +105,23 @@ class ChooseMenu:
             transparency = 180
             # 破關鎖定
             if LEVEL_FINISH_TIMES[0] == 0:
-                pygame.draw.rect(transparent_surface, (0, 0, 0, transparency), [
-                    437, 300, 150, 80], 0)
-                pygame.draw.rect(transparent_surface, (0, 0, 0, transparency), [
-                    437, 420, 150, 80], 0)
+                # pygame.draw.rect(transparent_surface, (0, 0, 0, transparency), [
+                #     437, 300, 150, 80], 0)
+                # pygame.draw.rect(transparent_surface, (0, 0, 0, transparency), [
+                #     437, 420, 150, 80], 0)
                 self.menu_win.blit(transparent_surface, (0, 0))
-                self.menu_win.blit(self.lock_image, (472, 295))
-                self.menu_win.blit(self.lock_image, (472, 415))
+                # self.menu_win.blit(self.lock_image, (472, 295))
+                # self.menu_win.blit(self.lock_image, (472, 415))
+                self.menu_win.blit(self.lock_image, (437, 300))
+                self.menu_win.blit(self.lock_image, (437, 420))
             elif LEVEL_FINISH_TIMES[0] != 0 and LEVEL_FINISH_TIMES[1] == 0:
                 self.unlock(self.level2_btn)
-                pygame.draw.rect(transparent_surface, (0, 0, 0, transparency), [
-                    437, 420, 150, 80], 0)
+                # pygame.draw.rect(transparent_surface, (0, 0, 0, transparency), [
+                #     437, 420, 150, 80], 0)
                 self.menu_win.blit(transparent_surface, (0, 0))
-                self.menu_win.blit(self.lock_image, (472, 415))
+                # self.menu_win.blit(self.lock_image, (472, 415))
+                self.menu_win.blit(self.lock_image, (437, 420))
+
             elif LEVEL_FINISH_TIMES[1] != 0:
                 self.unlock(self.level3_btn)
 
