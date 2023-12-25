@@ -62,6 +62,10 @@ SKILL_ANIMATION_IMAGE = pygame.transform.scale(pygame.image.load(
 game_completed_image = pygame.transform.scale(pygame.image.load(
     os.path.join(IMAGE_PATH, "game_completed.png")), (500, 300))
 
+# Clock status image
+clock_status_image = pygame.transform.scale(pygame.image.load(
+    os.path.join(IMAGE_PATH, "hourglass.png")), (220, 80))
+
 
 class GameView:
     def __init__(self, checkpoint):
@@ -93,6 +97,7 @@ class GameView:
         self.win.blit(SCORE_LOG_IMAGE,(WIN_WIDTH/2 - 80, 0))
         self.win.blit(en_base_image, (0, 280))
         self.win.blit(hero_base_image, (875, 300))
+        
 
         ''' btn of upgrade '''
         self.win.blit(UPGRADE_BTN_IMAGE, (675, 510))
@@ -509,9 +514,10 @@ class GameView:
         self.win.blit(game_completed_image, (262, 150))
 
     def draw_game_time(self, time):
+        self.win.blit(clock_status_image, (WIN_WIDTH - 230, WIN_HEIGHT - 90))
         timer = pygame.font.Font(arial, 40)
-        time_text = timer.render(f"time: {time}", True, WHITE)
-        self.win.blit(time_text, (WIN_WIDTH-220, WIN_HEIGHT-65))
+        time_text = timer.render(f"{time}", True, WHITE)
+        self.win.blit(time_text, (WIN_WIDTH-120, WIN_HEIGHT-75))
 
     def draw_score(self, score):
         score_font = pygame.font.Font(arial, 28)
