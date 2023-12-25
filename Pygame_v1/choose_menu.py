@@ -16,7 +16,7 @@ class ChooseMenu:
         self.menu_win = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
         # background
         self.bg = pygame.transform.scale(pygame.image.load(os.path.join(
-            IMAGE_PATH, "level_background_v0.png")), (WIN_WIDTH, WIN_HEIGHT))
+            IMAGE_PATH, "level_background_v1.png")), (WIN_WIDTH, WIN_HEIGHT))
         #title and button
         self.title_image = pygame.transform.scale(pygame.image.load(
             os.path.join(IMAGE_PATH, "choose_v0.png")), (400, 125))
