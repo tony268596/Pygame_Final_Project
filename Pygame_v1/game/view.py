@@ -16,12 +16,12 @@ bg_three = pygame.transform.scale(
     BACKGROUND_IMAGE_three, (WIN_WIDTH, WIN_HEIGHT))
 
 # hero images
-p_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "ship-1.png")), (80, 80))
-godtone_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "crew-1.png")), (80, 80))
-howhow_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "dog-1.png")), (80, 80))
+ship_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "ship_btn.png")), (80, 80))
+crew_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "crew_btn.png")), (80, 80))
+dog_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "dog_btn.png")), (80, 80))
 brian_button_image = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "brian_btn.jpg")), (80, 80))
 locked_button_image = pygame.transform.scale(
@@ -30,10 +30,10 @@ locked_button_image = pygame.transform.scale(
 # Update new hero images
 dog_button_image = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "dog_btn.png")), (80, 80))
-captain_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "captain_btn.png")), (80, 80))
-sailor_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "sailor_btn.png")), (80, 80))
+ship_button_image_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "ship_btn.png")), (80, 80))
+crew_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "crew_btn.png")), (80, 80))
 
 
 # tower base images
@@ -91,8 +91,8 @@ class GameView:
         heromenu_background = pygame.Surface((WIN_WIDTH, 100), pygame.SRCALPHA)
         heromenu_background.fill((0, 0, 0, 64))
         self.win.blit(heromenu_background, (0, WIN_HEIGHT - 100))
-        self.win.blit(captain_button_image, (315, 510))
-        self.win.blit(sailor_button_image, (435, 510))
+        self.win.blit(ship_button_image, (315, 510))
+        self.win.blit(crew_button_image, (435, 510))
         self.win.blit(dog_button_image, (555, 510))
         self.win.blit(SCORE_LOG_IMAGE,(WIN_WIDTH/2 - 80, 0))
         self.win.blit(en_base_image, (0, 280))
@@ -182,14 +182,14 @@ class GameView:
             pygame.draw.rect(self.win, GREEN, [
                              hero.rect.x, hero.rect.y - 10, bar_width, bar_height])
 
-    def draw_data_p(self):
+    def draw_data_ship(self):
         x, y = pygame.mouse.get_pos()
-        p_btn_rect = p_button_image.get_rect()
-        p_btn_rect.center = (355, 550)
-        if(p_btn_rect.collidepoint(x, y)):
-            p_data = pygame.Surface((130, 105), pygame.SRCALPHA)
-            p_data.fill((0, 0, 0, 170))
-            self.win.blit(p_data, (310, 390))
+        ship_btn_rect = ship_button_image.get_rect()
+        ship_btn_rect.center = (355, 550)
+        if(ship_btn_rect.collidepoint(x, y)):
+            ship_data = pygame.Surface((130, 105), pygame.SRCALPHA)
+            ship_data.fill((0, 0, 0, 170))
+            self.win.blit(ship_data, (310, 390))
 
             Topic = pygame.font.Font(arial, 22)
             Topic_text = Topic.render("Initial ability", True, WHITE)
@@ -212,14 +212,14 @@ class GameView:
             Cost_text = Cost.render(" Cost = 200", True, WHITE)
             self.win.blit(Cost_text, (310, 470))
 
-    def draw_data_howhow(self):
+    def draw_data_dog(self):
         x, y = pygame.mouse.get_pos()
-        howhow_btn_rect = howhow_button_image.get_rect()
-        howhow_btn_rect.center = (595, 550)
-        if(howhow_btn_rect.collidepoint(x, y)):
-            howhow_data = pygame.Surface((130, 105), pygame.SRCALPHA)
-            howhow_data.fill((0, 0, 0, 170))
-            self.win.blit(howhow_data, (550, 390))
+        dog_btn_rect = dog_button_image.get_rect()
+        dog_btn_rect.center = (595, 550)
+        if(dog_btn_rect.collidepoint(x, y)):
+            dog_data = pygame.Surface((130, 105), pygame.SRCALPHA)
+            dog_data.fill((0, 0, 0, 170))
+            self.win.blit(dog_data, (550, 390))
 
             Topic = pygame.font.Font(arial, 22)
             Topic_text = Topic.render("Initial ability", True, WHITE)
@@ -241,14 +241,14 @@ class GameView:
             Cost_text = Cost.render(" Cost = 70", True, WHITE)
             self.win.blit(Cost_text, (550, 470))
 
-    def draw_data_godtone(self):
+    def draw_data_crew(self):
         x, y = pygame.mouse.get_pos()
-        godtone_btn_rect = godtone_button_image.get_rect()
-        godtone_btn_rect.center = (475, 550)
-        if(godtone_btn_rect.collidepoint(x, y)):
-            godtone_data = pygame.Surface((130, 105), pygame.SRCALPHA)
-            godtone_data.fill((0, 0, 0, 170))
-            self.win.blit(godtone_data, (430, 390))
+        crew_btn_rect = crew_button_image.get_rect()
+        crew_btn_rect.center = (475, 550)
+        if(crew_btn_rect.collidepoint(x, y)):
+            crew_data = pygame.Surface((130, 105), pygame.SRCALPHA)
+            crew_data.fill((0, 0, 0, 170))
+            self.win.blit(crew_data, (430, 390))
 
             Topic = pygame.font.Font(arial, 22)
             Topic_text = Topic.render("Initial ability", True, WHITE)
@@ -504,12 +504,12 @@ class GameView:
         complete = pygame.font.Font(arial, 80)
         text = pygame.font.Font(arial, 40)
         game_win_text = over.render("click to back to menu", True, WHITE)
-        game_finish_text = text.render(
-            "now you can try to use less time!", True, WHITE)
+        # game_finish_text = text.render(
+        #     "now you can try to use less time!", True, WHITE)
         congrats = complete.render("CONGRATS", True, WHITE)
         self.win.blit(transparent_surface, (0, 0))
         self.win.blit(congrats, (350, 15))
-        self.win.blit(game_finish_text, (300, 100))
+        #self.win.blit(game_finish_text, (300, 100))
         self.win.blit(game_win_text, (800, 560))
         self.win.blit(game_completed_image, (262, 150))
 

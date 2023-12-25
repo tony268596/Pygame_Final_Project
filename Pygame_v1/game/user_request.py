@@ -64,45 +64,45 @@ class Muse:
             model.sound.play()
 
 
-class Hero_howhow:
+class Hero_dog:
     def __init__(self, subject):
         subject.register(self)
-        self.howhow_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"dog1a.mp3"))
+        self.dog_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"dog1a.mp3"))
     def update(self, user_request: str, model):
-        if user_request == "howhow":
+        if user_request == "dog":
             if model.money >= 20:
                 model.money -= 20
-                model.heros.add('howhow', model.hero_level)
-                self.howhow_music.set_volume(0.4)
-                pygame.mixer.Channel(2).play(self.howhow_music)
-                print('summon howhow')
+                model.heros.add('dog', model.hero_level)
+                self.dog_music.set_volume(0.4)
+                pygame.mixer.Channel(2).play(self.dog_music)
+                print('summon dog')
 
-class Hero_godtone:
+class Hero_crew:
     def __init__(self, subject):
         subject.register(self)
-        self.godtone_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"run1.mp3"))
+        self.crew_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"run1.mp3"))
     def update(self, user_request: str, model):
-        if user_request == "godtone":
+        if user_request == "crew":
             if model.money >= 50:
                 model.money -= 50
-                model.heros.add("godtone", model.hero_level)
-                self.godtone_music.set_volume(0.3)
-                pygame.mixer.Channel(2).play(self.godtone_music)
-                print('summon godtone')
+                model.heros.add("crew", model.hero_level)
+                self.crew_music.set_volume(0.3)
+                pygame.mixer.Channel(2).play(self.crew_music)
+                print('summon crew')
 
 
-class Hero_p:
+class Hero_ship:
     def __init__(self, subject):
         subject.register(self)
-        self.p_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"boat_engine.mp3"))
+        self.ship_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"boat_engine.mp3"))
     def update(self, user_request: str, model):
-        if user_request == "p":
+        if user_request == "ship":
             if model.money >= 100:
                 model.money -= 100
-                model.heros.add("p", model.hero_level)
-                self.p_music.set_volume(0.8)
-                pygame.mixer.Channel(2).play(self.p_music)
-                print('summon p')
+                model.heros.add("ship", model.hero_level)
+                self.ship_music.set_volume(0.8)
+                pygame.mixer.Channel(2).play(self.ship_music)
+                print('summon ship')
 
 class Hero_brian:
     def __init__(self, subject):

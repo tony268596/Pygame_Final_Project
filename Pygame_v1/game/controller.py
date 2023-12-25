@@ -43,15 +43,24 @@ class GameControl:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 x, y = pygame.mouse.get_pos()
                 self.events["mouse position"] = [x, y]
-                if self.model.mytower_hp <= 0 or self.model.entower_hp <= 0:
+                if self.model.mytower_hp <= 0:
                     if self.winrect.collidepoint(x, y):
                         # write data into file once the player clicks,
                         # since there will be only one click for player to click,
                         # or it will keep writing same data into file.
-                        self.model.save_time()
+                        # self.model.save_time()
+                        print("click!")
                         game_status["go_level_menu"] = True
                         pygame.mixer.music.stop()
                         self.play_music_select()
+                elif self.model.entower_hp <= 0 or self.model.score >= 1000:
+                    if self.winrect.collidepoint(x, y):
+                        print("click!")
+                        game_status["go_level_menu"] = True
+                        self.events["win"] = True
+                        pygame.mixer.music.stop()
+                        self.play_music_select()
+
         self.events["keyboard key"] = pygame.K_n
         if self.model.entower_hp <= 0 and self.model.mytower_hp > 0:
             self.events["win"] = True
@@ -78,9 +87,9 @@ class GameControl:
         self.view.draw_heros(self.model.heros)
         self.view.draw_money(self.model.money)
         self.view.draw_score(self.model.game_score())
-        self.view.draw_data_p()
-        self.view.draw_data_howhow()
-        self.view.draw_data_godtone()
+        self.view.draw_data_ship()
+        self.view.draw_data_dog()
+        self.view.draw_data_crew()
         if LEVEL_FINISH_TIMES[0] != 0:
             self.view.draw_data_brian()
         else:
@@ -106,10 +115,12 @@ class GameControl:
 
         if self.model.mytower_hp <= 0:
             self.view.draw_game_over()
-        elif self.model.score >= 1000 and self.model.checkpoint != 3:
+        elif self.model.score >= 1000:
             self.view.draw_game_win()
-        elif self.model.entower_hp <= 0 and self.model.checkpoint == 3:
-            self.view.draw_finish_win()
+        # elif self.model.score >= 1000 and self.model.checkpoint != 3:
+        #     self.view.draw_game_win()
+        # elif self.model.score >= 1000 and self.model.checkpoint == 3:
+        #     self.view.draw_finish_win()
 
     def play_music_select(self):
         pygame.mixer.music.load(os.path.join(SOUND_PATH, "level_select_v0.mp3"))

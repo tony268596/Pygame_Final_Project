@@ -3,7 +3,7 @@ import os
 from enemy.enemies import EnemyGroup
 from hero import HeroGroup
 from menu.menus import MainMenu
-from game.user_request import RequestSubject, EnemyGenerator, Muse, Music, Hero_howhow, Hero_godtone, Hero_p, Hero_brian, Special, Upgrade
+from game.user_request import RequestSubject, EnemyGenerator, Muse, Music, Hero_dog, Hero_crew, Hero_ship, Hero_brian, Special, Upgrade
 from settings import WIN_WIDTH, WIN_HEIGHT, BACKGROUND_IMAGE, BACKGROUND_IMAGE_two, BACKGROUND_IMAGE_three, user_info, RECORD_PATH, SOUND_PATH
 from hero import HeroGroup
 
@@ -25,11 +25,11 @@ class GameModel:
         self.generator = EnemyGenerator(self.subject)
         self.muse = Muse(self.subject)
         self.music = Music(self.subject)
-        self.hero_howhow = Hero_howhow(self.subject)
-        self.hero_godtone = Hero_godtone(self.subject)
-        self.hero_p = Hero_p(self.subject)
-        if self.checkpoint != 1:
-            self.hero_brian = Hero_brian(self.subject)
+        self.hero_dog = Hero_dog(self.subject)
+        self.hero_crew = Hero_crew(self.subject)
+        self.hero_ship = Hero_ship(self.subject)
+        # if self.checkpoint != 1:
+        #     self.hero_brian = Hero_brian(self.subject)
         self.special = Special(self.subject)
         self.upgrade = Upgrade(self.subject)
         self.money = self.initial_money(self.checkpoint)
