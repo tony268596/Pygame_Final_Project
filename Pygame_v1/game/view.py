@@ -16,12 +16,12 @@ bg_three = pygame.transform.scale(
     BACKGROUND_IMAGE_three, (WIN_WIDTH, WIN_HEIGHT))
 
 # hero images
-p_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "ship-1.png")), (80, 80))
-godtone_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "crew-1.png")), (80, 80))
-howhow_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "dog-1.png")), (80, 80))
+ship_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "ship_btn.png")), (80, 80))
+crew_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "crew_btn.png")), (80, 80))
+dog_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "dog_btn.png")), (80, 80))
 brian_button_image = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "brian_btn.jpg")), (80, 80))
 locked_button_image = pygame.transform.scale(
@@ -30,10 +30,10 @@ locked_button_image = pygame.transform.scale(
 # Update new hero images
 dog_button_image = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "dog_btn.png")), (80, 80))
-captain_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "captain_btn.png")), (80, 80))
-sailor_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "sailor_btn.png")), (80, 80))
+ship_button_image_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "ship_btn.png")), (80, 80))
+crew_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "crew_btn.png")), (80, 80))
 
 
 # tower base images
@@ -62,6 +62,10 @@ SKILL_ANIMATION_IMAGE = pygame.transform.scale(pygame.image.load(
 game_completed_image = pygame.transform.scale(pygame.image.load(
     os.path.join(IMAGE_PATH, "game_completed.png")), (500, 300))
 
+# Clock status image
+clock_status_image = pygame.transform.scale(pygame.image.load(
+    os.path.join(IMAGE_PATH, "hourglass.png")), (220, 80))
+
 
 class GameView:
     def __init__(self, checkpoint):
@@ -87,12 +91,13 @@ class GameView:
         heromenu_background = pygame.Surface((WIN_WIDTH, 100), pygame.SRCALPHA)
         heromenu_background.fill((0, 0, 0, 64))
         self.win.blit(heromenu_background, (0, WIN_HEIGHT - 100))
-        self.win.blit(captain_button_image, (315, 510))
-        self.win.blit(sailor_button_image, (435, 510))
+        self.win.blit(ship_button_image, (315, 510))
+        self.win.blit(crew_button_image, (435, 510))
         self.win.blit(dog_button_image, (555, 510))
         self.win.blit(SCORE_LOG_IMAGE,(WIN_WIDTH/2 - 80, 0))
         self.win.blit(en_base_image, (0, 280))
         self.win.blit(hero_base_image, (875, 300))
+        
 
         ''' btn of upgrade '''
         self.win.blit(UPGRADE_BTN_IMAGE, (675, 510))
@@ -109,8 +114,8 @@ class GameView:
                 bar_height = 5
                 # 改敵人大小的話，記得改血條blit的位置(y)
                 pygame.draw.rect(
-                    self.win, RED, [en.rect.x, en.rect.y - 35, max_bar_width, bar_height])
-                pygame.draw.rect(self.win, GREEN, [
+                    self.win, WHITE, [en.rect.x, en.rect.y - 35, max_bar_width, bar_height])
+                pygame.draw.rect(self.win, RED, [
                                  en.rect.x, en.rect.y - 35, bar_width, bar_height])
 
             elif(en.en_type == 2):
@@ -122,8 +127,8 @@ class GameView:
                 bar_height = 5
                 # 改敵人大小的話，記得改血條blit的位置(y)
                 pygame.draw.rect(
-                    self.win, RED, [en.rect.x, en.rect.y - 35, max_bar_width, bar_height])
-                pygame.draw.rect(self.win, GREEN, [
+                    self.win, WHITE, [en.rect.x, en.rect.y - 35, max_bar_width, bar_height])
+                pygame.draw.rect(self.win, RED, [
                                  en.rect.x, en.rect.y - 35, bar_width, bar_height])
 
             elif(en.en_type == 3):
@@ -135,8 +140,8 @@ class GameView:
                 bar_height = 5
                 # 改敵人大小的話，記得改血條blit的位置(y)
                 pygame.draw.rect(
-                    self.win, RED, [en.rect.x, en.rect.y - 45, max_bar_width, bar_height])
-                pygame.draw.rect(self.win, GREEN, [
+                    self.win, WHITE, [en.rect.x, en.rect.y - 45, max_bar_width, bar_height])
+                pygame.draw.rect(self.win, RED, [
                                  en.rect.x, en.rect.y - 45, bar_width, bar_height])
 
             elif(en.en_type == 4):
@@ -173,25 +178,25 @@ class GameView:
             max_bar_width = hero.rect.w
             bar_height = 5
             pygame.draw.rect(
-                self.win, RED, [hero.rect.x, hero.rect.y - 10, max_bar_width, bar_height])
-            pygame.draw.rect(self.win, GREEN, [
+                self.win, WHITE, [hero.rect.x, hero.rect.y - 10, max_bar_width, bar_height])
+            pygame.draw.rect(self.win, BLUE, [
                              hero.rect.x, hero.rect.y - 10, bar_width, bar_height])
 
-    def draw_data_p(self):
+    def draw_data_ship(self):
         x, y = pygame.mouse.get_pos()
-        p_btn_rect = p_button_image.get_rect()
-        p_btn_rect.center = (355, 550)
-        if(p_btn_rect.collidepoint(x, y)):
-            p_data = pygame.Surface((130, 105), pygame.SRCALPHA)
-            p_data.fill((0, 0, 0, 170))
-            self.win.blit(p_data, (310, 390))
+        ship_btn_rect = ship_button_image.get_rect()
+        ship_btn_rect.center = (355, 550)
+        if(ship_btn_rect.collidepoint(x, y)):
+            ship_data = pygame.Surface((130, 105), pygame.SRCALPHA)
+            ship_data.fill((0, 0, 0, 170))
+            self.win.blit(ship_data, (310, 390))
 
             Topic = pygame.font.Font(arial, 22)
             Topic_text = Topic.render("Initial ability", True, WHITE)
             self.win.blit(Topic_text, (315, 390))
 
             HP = pygame.font.Font(arial, 20)
-            HP_text = HP.render(" HP = 10", True, WHITE)
+            HP_text = HP.render(" HP = 40", True, WHITE)
             self.win.blit(HP_text, (310, 410))
 
             Power = pygame.font.Font(arial, 20)
@@ -204,17 +209,17 @@ class GameView:
             self.win.blit(Attack_range_text, (310, 450))
 
             Cost = pygame.font.Font(arial, 20)
-            Cost_text = Cost.render(" Cost = 200", True, WHITE)
+            Cost_text = Cost.render(" Cost = 100", True, WHITE)
             self.win.blit(Cost_text, (310, 470))
 
-    def draw_data_howhow(self):
+    def draw_data_dog(self):
         x, y = pygame.mouse.get_pos()
-        howhow_btn_rect = howhow_button_image.get_rect()
-        howhow_btn_rect.center = (595, 550)
-        if(howhow_btn_rect.collidepoint(x, y)):
-            howhow_data = pygame.Surface((130, 105), pygame.SRCALPHA)
-            howhow_data.fill((0, 0, 0, 170))
-            self.win.blit(howhow_data, (550, 390))
+        dog_btn_rect = dog_button_image.get_rect()
+        dog_btn_rect.center = (595, 550)
+        if(dog_btn_rect.collidepoint(x, y)):
+            dog_data = pygame.Surface((130, 105), pygame.SRCALPHA)
+            dog_data.fill((0, 0, 0, 170))
+            self.win.blit(dog_data, (550, 390))
 
             Topic = pygame.font.Font(arial, 22)
             Topic_text = Topic.render("Initial ability", True, WHITE)
@@ -225,7 +230,7 @@ class GameView:
             self.win.blit(HP_text, (550, 410))
 
             Power = pygame.font.Font(arial, 20)
-            Power_text = Power.render(" Power = 3", True, WHITE)
+            Power_text = Power.render(" Power = 2", True, WHITE)
             self.win.blit(Power_text, (550, 430))
 
             Attack_range = pygame.font.Font(arial, 20)
@@ -233,36 +238,36 @@ class GameView:
             self.win.blit(Attack_range_text, (550, 450))
 
             Cost = pygame.font.Font(arial, 20)
-            Cost_text = Cost.render(" Cost = 70", True, WHITE)
+            Cost_text = Cost.render(" Cost = 25", True, WHITE)
             self.win.blit(Cost_text, (550, 470))
 
-    def draw_data_godtone(self):
+    def draw_data_crew(self):
         x, y = pygame.mouse.get_pos()
-        godtone_btn_rect = godtone_button_image.get_rect()
-        godtone_btn_rect.center = (475, 550)
-        if(godtone_btn_rect.collidepoint(x, y)):
-            godtone_data = pygame.Surface((130, 105), pygame.SRCALPHA)
-            godtone_data.fill((0, 0, 0, 170))
-            self.win.blit(godtone_data, (430, 390))
+        crew_btn_rect = crew_button_image.get_rect()
+        crew_btn_rect.center = (475, 550)
+        if(crew_btn_rect.collidepoint(x, y)):
+            crew_data = pygame.Surface((130, 105), pygame.SRCALPHA)
+            crew_data.fill((0, 0, 0, 170))
+            self.win.blit(crew_data, (430, 390))
 
             Topic = pygame.font.Font(arial, 22)
             Topic_text = Topic.render("Initial ability", True, WHITE)
             self.win.blit(Topic_text, (433, 390))
 
             HP = pygame.font.Font(arial, 20)
-            HP_text = HP.render(" HP = 15", True, WHITE)
+            HP_text = HP.render(" HP = 35", True, WHITE)
             self.win.blit(HP_text, (433, 410))
 
             Power = pygame.font.Font(arial, 20)
-            Power_text = Power.render(" Power = 3", True, WHITE)
+            Power_text = Power.render(" Power = 2", True, WHITE)
             self.win.blit(Power_text, (433, 430))
 
             Attack_range = pygame.font.Font(arial, 20)
-            Attack_range_text = Attack_range.render(" Range = 60", True, WHITE)
+            Attack_range_text = Attack_range.render(" Range = 40", True, WHITE)
             self.win.blit(Attack_range_text, (433, 450))
 
             Cost = pygame.font.Font(arial, 20)
-            Cost_text = Cost.render(" Cost = 70", True, WHITE)
+            Cost_text = Cost.render(" Cost = 50", True, WHITE)
             self.win.blit(Cost_text, (433, 470))
 
             # Topic_2 = pygame.font.Font(arial, 30)
@@ -499,19 +504,20 @@ class GameView:
         complete = pygame.font.Font(arial, 80)
         text = pygame.font.Font(arial, 40)
         game_win_text = over.render("click to back to menu", True, WHITE)
-        game_finish_text = text.render(
-            "now you can try to use less time!", True, WHITE)
+        # game_finish_text = text.render(
+        #     "now you can try to use less time!", True, WHITE)
         congrats = complete.render("CONGRATS", True, WHITE)
         self.win.blit(transparent_surface, (0, 0))
         self.win.blit(congrats, (350, 15))
-        self.win.blit(game_finish_text, (300, 100))
+        #self.win.blit(game_finish_text, (300, 100))
         self.win.blit(game_win_text, (800, 560))
         self.win.blit(game_completed_image, (262, 150))
 
     def draw_game_time(self, time):
+        self.win.blit(clock_status_image, (WIN_WIDTH - 230, WIN_HEIGHT - 90))
         timer = pygame.font.Font(arial, 40)
-        time_text = timer.render(f"time: {time}", True, WHITE)
-        self.win.blit(time_text, (WIN_WIDTH-220, WIN_HEIGHT-65))
+        time_text = timer.render(f"{time}", True, WHITE)
+        self.win.blit(time_text, (WIN_WIDTH-120, WIN_HEIGHT-75))
 
     def draw_score(self, score):
         score_font = pygame.font.Font(arial, 28)

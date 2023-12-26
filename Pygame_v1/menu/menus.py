@@ -5,16 +5,16 @@ from settings import IMAGE_PATH
 pygame.init()
 
 
-godtone_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH,"godtone_btn.jpg")), (80, 80))
-howhow_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH,"howhow_btn.jpg")), (80, 80))
-p_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH,"p_btn.PNG")), (80, 80))
+crew_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH,"crew_btn.png")), (80, 80))
+dog_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH,"dog_btn.png")), (80, 80))
+ship_button_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH,"ship_btn.png")), (80, 80))
 brian_button_image = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH,"brian_btn.jpg")), (80, 80))
 locked_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH,"locked.PNG")), (80, 80))
+    pygame.image.load(os.path.join(IMAGE_PATH,"locked.png")), (80, 80))
 UPGRADE_BTN_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "upgrade_btn.png")), (80, 80))
 # SPECIAL_SKILL_BTN_IMAGE = pygame.transform.scale(
@@ -38,15 +38,15 @@ class Button:
 
 class MainMenu:
     def __init__(self):
-        # self._buttons = [Button(p_button_image, "p", 355, 550),
-        #                  Button(godtone_button_image, "godtone", 475, 550),
-        #                  Button(howhow_button_image, "howhow", 595, 550),
+        # self._buttons = [Button(ship_button_image, "ship", 355, 550),
+        #                  Button(crew_button_image, "crew", 475, 550),
+        #                  Button(dog_button_image, "dog", 595, 550),
         #                  Button(brian_button_image, "brian", 235, 550),
         #                  Button(SPECIAL_SKILL_BTN_IMAGE, 'special', 755, 575),
         #                  Button(UPGRADE_BTN_IMAGE, 'upgrade', 755, 525)]
-        self._buttons = [Button(p_button_image, "p", 355, 550),
-                         Button(godtone_button_image, "godtone", 475, 550),
-                         Button(howhow_button_image, "howhow", 595, 550),
+        self._buttons = [Button(ship_button_image, "ship", 355, 550),
+                         Button(crew_button_image, "crew", 475, 550),
+                         Button(dog_button_image, "dog", 595, 550),
                          Button(brian_button_image, "brian", 235, 550),
                          Button(UPGRADE_BTN_IMAGE, 'upgrade', 755, 525)]
     @property

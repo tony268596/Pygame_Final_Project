@@ -7,9 +7,9 @@ from settings import IMAGE_PATH,SOUND_PATH
 import random
 
 pygame.init()
-ENEMY_IMAGE_1 = pygame.image.load(os.path.join(IMAGE_PATH, "Crocodile-0.png"))
-ENEMY_IMAGE_2 = pygame.image.load(os.path.join(IMAGE_PATH, "pirate-0.png"))
-ENEMY_IMAGE_3 = pygame.image.load(os.path.join(IMAGE_PATH, "wood.png"))
+ENEMY_IMAGE_1 = pygame.image.load(os.path.join(IMAGE_PATH, "Crocodile-1.png"))
+ENEMY_IMAGE_2 = pygame.image.load(os.path.join(IMAGE_PATH, "pirate-1.png"))
+ENEMY_IMAGE_3 = pygame.image.load(os.path.join(IMAGE_PATH, "wood-1.png"))
 
 
 class Enemy:
@@ -62,11 +62,11 @@ class Enemy:
     # 不同敵人的圖片
     def enemy_image(self, entype):
         if(entype == 1):
-            return pygame.transform.scale(ENEMY_IMAGE_1, (80, 80))
+            return pygame.transform.scale(ENEMY_IMAGE_1, (150, 60))
         elif(entype == 2):
             return pygame.transform.scale(ENEMY_IMAGE_2, (120, 120))
         elif(entype == 3):
-            return pygame.transform.scale(ENEMY_IMAGE_3, (120, 120))
+            return pygame.transform.scale(ENEMY_IMAGE_3, (50, 50))
         # elif(entype == 4):
         #     return pygame.transform.scale(ENEMY_IMAGE_4, (120, 120))
         # elif(entype == 5):
@@ -78,19 +78,19 @@ class Enemy:
             entype_one_hp = [15, 20]
             if(point == 1):
                 return entype_one_hp[0]
-            elif(point == 2):
+            else:#elif(point == 2):
                 return entype_one_hp[1]
         elif(entype == 2):
             entype_two_hp = [15, 15]
             if(point == 1):
                 return entype_two_hp[0]
-            elif(point == 2):
+            else:#elif(point == 2):
                 return entype_two_hp[1]
         elif(entype == 3):
             entype_three_hp = [10, 18]
             if(point == 1):
                 return entype_three_hp[0]
-            elif(point == 2):
+            else:#elif(point == 2):
                 return entype_three_hp[1]
         # elif(entype == 4):
         #     return 50
@@ -100,22 +100,22 @@ class Enemy:
     # 攻擊力    
     def enemy_power(self, entype, point):
         if(entype == 1):
-            entype_one_power = [10, 5]
+            entype_one_power = [8, 5]
             if(point == 1):
                 return entype_one_power[0]
-            elif(point == 2):
+            else:#elif(point == 2):
                 return entype_one_power[1]
         elif(entype == 2):
-            entype_two_power = [12, 8]
+            entype_two_power = [11, 8]
             if(point == 1):
                 return entype_two_power[0]
-            elif(point == 2):
+            else:#elif(point == 2):
                 return entype_two_power[1]
         elif(entype == 3):
-            entype_three_power = [8, 4]
+            entype_three_power = [7, 4]
             if(point == 1):
                 return entype_three_power[0]
-            elif(point == 2):
+            else:#elif(point == 2):
                 return entype_three_power[1]
         # elif(entype == 4):
         #     return 50
@@ -125,22 +125,22 @@ class Enemy:
     # 移動速度    
     def move_speed(self, entype, point):
         if(entype == 1):
-            entype_one_speed = [2, 1.2]
+            entype_one_speed = [1.2, 1.2]
             if(point == 1):
                 return entype_one_speed[0]
-            elif(point == 2):
+            else:#elif(point == 2):
                 return entype_one_speed[1]
         elif(entype == 2):
             entype_two_speed = [1.5, 0.8]
             if(point == 1):
                 return entype_two_speed[0]
-            elif(point == 2):
+            else:#elif(point == 2):
                 return entype_two_speed[1]
         elif(entype == 3):
             entype_three_speed = [2.2, 1.8]
             if(point == 1):
                 return entype_three_speed[0]
-            elif(point == 2):
+            else:#elif(point == 2):
                 return entype_three_speed[1]
         # elif(entype == 4):
         #     return 0.2

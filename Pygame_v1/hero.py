@@ -6,7 +6,7 @@ from color_settings import *
 import random
 
 # pygame.init()
-HOWHOW_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "dog-1.png")), (60, 90)),
+DOG_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "dog-1.png")), (60, 90)),
                 pygame.transform.scale(pygame.image.load(
                     os.path.join(IMAGE_PATH, "dog-2.png")), (60, 90)),
                 pygame.transform.scale(pygame.image.load(
@@ -18,7 +18,7 @@ HOWHOW_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH
                 pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "dog-6.png")), (60, 90))]
 
 
-GODTONE_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "crew-1.png")), (100, 150)),
+CREW_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "crew-1.png")), (100, 150)),
                  pygame.transform.scale(pygame.image.load(
                      os.path.join(IMAGE_PATH, "crew-2.png")), (100, 150)),
                  pygame.transform.scale(pygame.image.load(
@@ -27,7 +27,7 @@ GODTONE_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PAT
                      os.path.join(IMAGE_PATH, "crew-4.png")), (100, 150)),
                  pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "crew-5.png")), (100, 150))]
 
-P_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "ship-1.png")), (70, 120)),
+SHIP_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "ship-1.png")), (70, 120)),
            pygame.transform.scale(pygame.image.load(
                os.path.join(IMAGE_PATH, "ship-2.png")), (70, 120)),
            pygame.transform.scale(pygame.image.load(
@@ -47,12 +47,12 @@ BRIAN_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH,
                    os.path.join(IMAGE_PATH, "brian5.png")), (50, 100)),
                pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "brian6.png")), (50, 100))]
 
-HOWHOW_PUNCH_IMAGE = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "bite.png")), (50, 50))
-GODTONE_PUNCH_IMAGE = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "sword.png")), (50, 50))
-P_PUNCH_IMAGE = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "targeting.png")), (50, 50))
+DOG_PUNCH_IMAGE = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "paw.png")), (50, 50))
+CREW_PUNCH_IMAGE = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "hit.png")), (50, 50))
+SHIP_PUNCH_IMAGE = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "collision.png")), (50, 50))
 BRIAN_PUNCH_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "explosion.png")), (50, 50))
 
@@ -66,11 +66,11 @@ class Hero:
         self.move_count = 0
         self.upgrade = [1, 1.15, 1.3, 1.5]
         self.stride = self.move_speed(self.hero_type)
-        if self.hero_type == 'howhow':
+        if self.hero_type == 'dog':
             self.image = self.hero_image(self.hero_type)[0]
-        elif self.hero_type == 'godtone':
+        elif self.hero_type == 'crew':
             self.image = self.hero_image(self.hero_type)[0]
-        elif self.hero_type == 'p':
+        elif self.hero_type == 'ship':
             self.image = self.hero_image(self.hero_type)[0]
         elif self.hero_type == 'brian':
             self.image = self.hero_image(self.hero_type)[0]
@@ -109,13 +109,13 @@ class Hero:
             self.move_count = 0
             self.rect.center = self.path[self.path_index]
 
-        if self.hero_type == 'howhow':
+        if self.hero_type == 'dog':
             self.image = self.hero_image(self.hero_type)[
                 self.move_count//6 % 6]
-        elif self.hero_type == 'godtone':
+        elif self.hero_type == 'crew':
             self.image = self.hero_image(self.hero_type)[
                 self.move_count//8 % 5]
-        elif self.hero_type == 'p':
+        elif self.hero_type == 'ship':
             self.image = self.hero_image(self.hero_type)[
                 self.move_count//8 % 5]
         elif self.hero_type == 'brian':
@@ -134,67 +134,67 @@ class Hero:
 
     # 不同英雄的圖片
     def hero_image(self, herotype):
-        if(herotype == 'howhow'):
-            return HOWHOW_IMAGE
-        elif(herotype == 'godtone'):
-            return GODTONE_IMAGE
-        elif(herotype == 'p'):
-            return P_IMAGE
+        if(herotype == 'dog'):
+            return DOG_IMAGE
+        elif(herotype == 'crew'):
+            return CREW_IMAGE
+        elif(herotype == 'ship'):
+            return SHIP_IMAGE
         elif(herotype == 'brian'):
             return BRIAN_IMAGE
     # 攻擊圖
 
     def hero_attack_image(self, herotype):
-        if(herotype == 'howhow'):
-            return HOWHOW_PUNCH_IMAGE
-        elif(herotype == 'godtone'):
-            return GODTONE_PUNCH_IMAGE
-        elif(herotype == 'p'):
-            return P_PUNCH_IMAGE
+        if(herotype == 'dog'):
+            return DOG_PUNCH_IMAGE
+        elif(herotype == 'crew'):
+            return CREW_PUNCH_IMAGE
+        elif(herotype == 'ship'):
+            return SHIP_PUNCH_IMAGE
         elif(herotype == 'brian'):
             return BRIAN_PUNCH_IMAGE
 
     # 攻擊圖的x偏差
     def hero_attack_loactionx(self, herotype):
-        if(herotype == 'howhow'):
+        if(herotype == 'dog'):
             return 75
-        elif(herotype == 'godtone'):
+        elif(herotype == 'crew'):
             return 75
-        elif(herotype == 'p'):
+        elif(herotype == 'ship'):
             return 195
         elif(herotype == 'brian'):
             return 75
 
     # 攻擊聲音
     def hero_attacksound(self, herotype):
-        if(herotype == 'howhow'):
+        if(herotype == 'dog'):
             return pygame.mixer.Sound(os.path.join(SOUND_PATH, "punch2.wav"))
-        elif(herotype == 'godtone'):
+        elif(herotype == 'crew'):
             return pygame.mixer.Sound(os.path.join(SOUND_PATH, "punch3.wav"))
-        elif(herotype == 'p'):
+        elif(herotype == 'ship'):
             return pygame.mixer.Sound(os.path.join(SOUND_PATH, "longshot.mp3"))
         elif(herotype == 'brian'):
             return pygame.mixer.Sound(os.path.join(SOUND_PATH, "briansound.wav"))
 
     # 最大血量
     def hero_hp_maxhp(self, herotype):
-        if(herotype == 'howhow'):
+        if(herotype == 'dog'):
             return 15
-        elif(herotype == 'godtone'):
-            return 30
-        elif(herotype == 'p'):
-            return 10
+        elif(herotype == 'crew'):
+            return 35
+        elif(herotype == 'ship'):
+            return 40
         elif(herotype == 'brian'):
             return 1
 
     # 攻擊力
 
     def hero_power(self, herotype):
-        if(herotype == 'howhow'):
-            return 1
-        elif(herotype == 'godtone'):
-            return 3
-        elif(herotype == 'p'):
+        if(herotype == 'dog'):
+            return 2
+        elif(herotype == 'crew'):
+            return 2
+        elif(herotype == 'ship'):
             return 7
         elif(herotype == 'brian'):
             return 7
@@ -202,11 +202,11 @@ class Hero:
     # 移動速度
 
     def move_speed(self, herotype):
-        if(herotype == 'howhow'):
+        if(herotype == 'dog'):
             return 1.5
-        elif(herotype == 'godtone'):
+        elif(herotype == 'crew'):
             return 1
-        elif(herotype == 'p'):
+        elif(herotype == 'ship'):
             return 0.6
         elif(herotype == 'brian'):
             return 2
@@ -214,11 +214,11 @@ class Hero:
     # 攻擊最大冷卻
 
     def attack_max_cd(self, herotype):
-        if(herotype == 'howhow'):
+        if(herotype == 'dog'):
             return 85
-        elif(herotype == 'godtone'):
+        elif(herotype == 'crew'):
             return 100
-        elif(herotype == 'p'):
+        elif(herotype == 'ship'):
             return 150
         elif(herotype == 'brian'):
             return 20
@@ -237,11 +237,11 @@ class Hero:
 
     # 攻擊距離
     def attack_range(self, herotype):
-        if(herotype == 'howhow'):
+        if(herotype == 'dog'):
             return 60
-        elif(herotype == 'godtone'):
-            return 60
-        elif(herotype == 'p'):
+        elif(herotype == 'crew'):
+            return 40
+        elif(herotype == 'ship'):
             return 180
         elif(herotype == 'brian'):
             return 60
@@ -336,12 +336,12 @@ class HeroGroup:
 
     def add(self, herotype, herolevel):
         new_hero = None
-        if herotype == 'howhow':
-            new_hero = Hero('howhow', herolevel)
-        elif herotype == 'godtone':
-            new_hero = Hero('godtone', herolevel)
-        elif herotype == 'p':
-            new_hero = Hero('p', herolevel)
+        if herotype == 'dog':
+            new_hero = Hero('dog', herolevel)
+        elif herotype == 'crew':
+            new_hero = Hero('crew', herolevel)
+        elif herotype == 'ship':
+            new_hero = Hero('ship', herolevel)
         elif herotype == 'brian':
             new_hero = Hero('brian', herolevel)
         if new_hero:
