@@ -191,7 +191,7 @@ class Hero:
 
     def hero_power(self, herotype):
         if(herotype == 'dog'):
-            return 50
+            return 2
         elif(herotype == 'crew'):
             return 2
         elif(herotype == 'ship'):
