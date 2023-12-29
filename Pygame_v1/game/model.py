@@ -7,6 +7,7 @@ from game.user_request import RequestSubject, EnemyGenerator, Muse, Music, Hero_
 from settings import WIN_WIDTH, WIN_HEIGHT, BACKGROUND_IMAGE, BACKGROUND_IMAGE_two, BACKGROUND_IMAGE_three, user_info, RECORD_PATH, SOUND_PATH
 from hero import HeroGroup
 
+from event import Event
 
 class GameModel:
     def __init__(self, checkpoint):
@@ -18,6 +19,9 @@ class GameModel:
         self.en = self.__enemies
         self.__heros = HeroGroup()
         self.he = self.__heros
+
+        self.ev = Event()
+
         self.__menu = None
         self.__main_menu = MainMenu()
         self.selected_button = None
@@ -131,6 +135,9 @@ class GameModel:
 
     def heros_advance(self):
         self.__heros.advance(self)
+
+    def event_advance(self):
+        self.ev.advance(self)
     
     def game_score(self):
         return self.score

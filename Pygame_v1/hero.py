@@ -50,9 +50,9 @@ BRIAN_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH,
 DOG_PUNCH_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "paw.png")), (50, 50))
 CREW_PUNCH_IMAGE = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "hit.png")), (50, 50))
+    pygame.image.load(os.path.join(IMAGE_PATH, "hit.png")), (60, 60))
 SHIP_PUNCH_IMAGE = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "collision.png")), (50, 50))
+    pygame.image.load(os.path.join(IMAGE_PATH, "collision.png")), (80, 80))
 BRIAN_PUNCH_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "explosion.png")), (50, 50))
 
@@ -168,9 +168,9 @@ class Hero:
     # 攻擊聲音
     def hero_attacksound(self, herotype):
         if(herotype == 'dog'):
-            return pygame.mixer.Sound(os.path.join(SOUND_PATH, "punch2.wav"))
+            return pygame.mixer.Sound(os.path.join(SOUND_PATH, "DogWolfBark.mp3"))
         elif(herotype == 'crew'):
-            return pygame.mixer.Sound(os.path.join(SOUND_PATH, "punch3.wav"))
+            return pygame.mixer.Sound(os.path.join(SOUND_PATH, "PlayerSweepAttack.mp3"))
         elif(herotype == 'ship'):
             return pygame.mixer.Sound(os.path.join(SOUND_PATH, "longshot.mp3"))
         elif(herotype == 'brian'):

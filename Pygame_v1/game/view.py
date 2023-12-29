@@ -50,6 +50,12 @@ SPECIAL_SKILL_BTN_IMAGE = pygame.transform.scale(
 SCORE_LOG_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "score.png")), (160, 50))
 
+# event images
+tsunami_sea_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "sea_0.png")), (1024, 600))
+tsunami_wave_image = pygame.transform.scale(
+    pygame.image.load(os.path.join(IMAGE_PATH, "tsunami_2.png")), (1024, 600))
+
 # in-game status images
 MONEY_IMAGE = pygame.transform.scale(pygame.image.load(
     os.path.join(IMAGE_PATH, "coin.png")), (220, 80))
@@ -66,6 +72,9 @@ game_completed_image = pygame.transform.scale(pygame.image.load(
 clock_status_image = pygame.transform.scale(pygame.image.load(
     os.path.join(IMAGE_PATH, "hourglass.png")), (220, 80))
 
+####
+en_attack_image = pygame.transform.scale(
+                    pygame.image.load(os.path.join(IMAGE_PATH, "broken-heart.png")), (60, 60))
 
 class GameView:
     def __init__(self, checkpoint):
@@ -113,6 +122,10 @@ class GameView:
                 max_bar_width = en.rect.w
                 bar_height = 5
                 # 改敵人大小的話，記得改血條blit的位置(y)
+                ##
+                pygame.draw.rect(
+                    self.win, BLACK, [en.rect.x-1, en.rect.y - 35-1, max_bar_width+2, bar_height+2])
+                ##
                 pygame.draw.rect(
                     self.win, WHITE, [en.rect.x, en.rect.y - 35, max_bar_width, bar_height])
                 pygame.draw.rect(self.win, RED, [
@@ -126,6 +139,10 @@ class GameView:
                 max_bar_width = en.rect.w
                 bar_height = 5
                 # 改敵人大小的話，記得改血條blit的位置(y)
+                ##
+                pygame.draw.rect(
+                    self.win, BLACK, [en.rect.x-1, en.rect.y - 35-1, max_bar_width+2, bar_height+2])
+                ##
                 pygame.draw.rect(
                     self.win, WHITE, [en.rect.x, en.rect.y - 35, max_bar_width, bar_height])
                 pygame.draw.rect(self.win, RED, [
@@ -139,6 +156,10 @@ class GameView:
                 max_bar_width = en.rect.w
                 bar_height = 5
                 # 改敵人大小的話，記得改血條blit的位置(y)
+                ##
+                pygame.draw.rect(
+                    self.win, BLACK, [en.rect.x-1, en.rect.y - 45-1, max_bar_width+2, bar_height+2])
+                ##
                 pygame.draw.rect(
                     self.win, WHITE, [en.rect.x, en.rect.y - 45, max_bar_width, bar_height])
                 pygame.draw.rect(self.win, RED, [
@@ -152,6 +173,10 @@ class GameView:
                 max_bar_width = en.rect.w
                 bar_height = 5
                 # 改敵人大小的話，記得改血條blit的位置(y)
+                ##
+                pygame.draw.rect(
+                    self.win, BLACK, [en.rect.x-1, en.rect.y - 55-1, max_bar_width+2, bar_height+2])
+                ##
                 pygame.draw.rect(
                     self.win, RED, [en.rect.x, en.rect.y - 55, max_bar_width, bar_height])
                 pygame.draw.rect(self.win, GREEN, [
@@ -165,6 +190,10 @@ class GameView:
                 max_bar_width = en.rect.w
                 bar_height = 5
                 # 改敵人大小的話，記得改血條blit的位置(y)
+                ##
+                pygame.draw.rect(
+                    self.win, BLACK, [en.rect.x-1, en.rect.y - 100-1, max_bar_width+2, bar_height+2])
+                ##
                 pygame.draw.rect(
                     self.win, RED, [en.rect.x, en.rect.y - 100, max_bar_width, bar_height])
                 pygame.draw.rect(self.win, GREEN, [
@@ -177,10 +206,18 @@ class GameView:
             bar_width = hero.rect.w * (hero.health / hero.max_health)
             max_bar_width = hero.rect.w
             bar_height = 5
+            ##
+            pygame.draw.rect(self.win, BLACK, [
+                             hero.rect.x-1, hero.rect.y - 10-1, bar_width+2, bar_height+2])
+            ##
             pygame.draw.rect(
                 self.win, WHITE, [hero.rect.x, hero.rect.y - 10, max_bar_width, bar_height])
             pygame.draw.rect(self.win, BLUE, [
                              hero.rect.x, hero.rect.y - 10, bar_width, bar_height])
+
+    def draw_event(self, ev):
+        self.win.blit(ev.image, ev.rect)   
+        #print("draw ev")
 
     def draw_data_ship(self):
         x, y = pygame.mouse.get_pos()
@@ -410,7 +447,14 @@ class GameView:
         for en in en_group:
             if en.attack_light == 1:
                 AL = pygame.Surface((WIN_WIDTH, WIN_HEIGHT))
-                AL.fill(WHITE)
+                AL.fill(PINK)
+                self.win.blit(AL, (0, 0))
+                
+                self.win.blit(en_attack_image,
+                              (en.rect.x+ en.rect.width+10, en.rect.y))
+            if en.attack_light == 2:
+                AL = pygame.Surface((WIN_WIDTH, WIN_HEIGHT))
+                AL.fill(RED)
                 self.win.blit(AL, (0, 0))
 
     def draw_attack_he(self, he_group, en_group, en_tower_hp):
@@ -448,6 +492,8 @@ class GameView:
         # pygame.draw.rect(
         #     self.win, GREEN, [5, 280, HEALTH_WIDTH/max_lives*lives, HEALTH_HEIGHT])
         pass
+    
+
 
     def draw_game_over(self):
         transparent_surface = pygame.Surface(

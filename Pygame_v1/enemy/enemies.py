@@ -29,7 +29,7 @@ class Enemy:
         self.attack_count = 0
         self.attack_max_count = self.attack_max_cd(self.en_type)
         self.range = self.attack_range(self.en_type)
-        self.attack_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"short_punch1.mp3"))
+        self.attack_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"DamageSound.mp3"))
         self.attack_light = 0
         
         
@@ -222,7 +222,7 @@ class EnemyGroup:
             if self.en_to_base_range(en):
                 if en.attack(model) and model.mytower_hp > 0:
                     model.mytower_hp -= en.power
-                    en.attack_light = 0
+                    en.attack_light = 2
                 elif model.mytower_hp <= 0:
                     model.entower_hp = 0
                     en.attack_light = 0
@@ -233,7 +233,7 @@ class EnemyGroup:
                     if self.en_to_hero_range(he, en):
                         if(en.attack(model)):
                             he.health -= en.power
-                            en.attack_light = 0
+                            en.attack_light = 1
                             break
                         else:
                             en.attack_light = 0

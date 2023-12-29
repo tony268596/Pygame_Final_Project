@@ -25,6 +25,8 @@ class GameControl:
         self.model.user_request(self.request)
         self.model.enemies_advance()
         self.model.heros_advance()
+##
+        self.model.event_advance()
 
     def receive_user_input(self):
         """receive user input from the events"""
@@ -83,13 +85,17 @@ class GameControl:
         self.view.draw_entower_hp(
             self.model.entower_hp, self.model.entower_max_hp)
         self.view.draw_game_time(self.model.game_time())
+        
+        self.view.draw_event(self.model.ev)
         self.view.draw_enemies(self.model.enemies)
         self.view.draw_heros(self.model.heros)
+        
         self.view.draw_money(self.model.money)
         self.view.draw_score(self.model.game_score())
         self.view.draw_data_ship()
         self.view.draw_data_dog()
         self.view.draw_data_crew()
+        
         if LEVEL_FINISH_TIMES[0] != 0:
             self.view.draw_data_brian()
         else:
