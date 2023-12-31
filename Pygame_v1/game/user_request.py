@@ -40,7 +40,7 @@ class EnemyGenerator:
         elif checkpoint == 2:
             return 4
         else:
-            return 1
+            return 5
         
 
 
@@ -72,6 +72,7 @@ class Hero_dog:
         if user_request == "dog":
             if model.money >= 25:
                 model.money -= 25
+                print(model.hero_level)
                 model.heros.add('dog', model.hero_level)
                 self.dog_music.set_volume(0.4)
                 pygame.mixer.Channel(2).play(self.dog_music)
@@ -83,8 +84,8 @@ class Hero_crew:
         self.crew_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"run1.mp3"))
     def update(self, user_request: str, model):
         if user_request == "crew":
-            if model.money >= 50:
-                model.money -= 50
+            if model.money >= 30:
+                model.money -= 30
                 model.heros.add("crew", model.hero_level)
                 self.crew_music.set_volume(0.3)
                 pygame.mixer.Channel(2).play(self.crew_music)
@@ -97,8 +98,8 @@ class Hero_ship:
         self.ship_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"boat_engine.mp3"))
     def update(self, user_request: str, model):
         if user_request == "ship":
-            if model.money >= 100:
-                model.money -= 100
+            if model.money >= 40:
+                model.money -= 40
                 model.heros.add("ship", model.hero_level)
                 self.ship_music.set_volume(0.8)
                 pygame.mixer.Channel(2).play(self.ship_music)
@@ -144,6 +145,7 @@ class Upgrade:
         if user_request == "upgrade":
             if model.money >= hero_update_cost[model.hero_level] and model.hero_level < 3:
                 model.money -= hero_update_cost[model.hero_level]
+                model.hero_level += 1
                 self.upgrade_music.set_volume(0.6)
                 pygame.mixer.Channel(3).play(self.upgrade_music)
                                 

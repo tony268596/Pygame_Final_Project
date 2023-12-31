@@ -64,7 +64,7 @@ class Hero:
         self.path = random.choice(hero_PATH)
         self.path_index = 0
         self.move_count = 0
-        self.upgrade = [1, 1.15, 1.3, 1.5]
+        self.upgrade = [1, 1.3, 1.5, 1.5]
         self.stride = self.move_speed(self.hero_type)
         if self.hero_type == 'dog':
             self.image = self.hero_image(self.hero_type)[0]
@@ -76,7 +76,7 @@ class Hero:
             self.image = self.hero_image(self.hero_type)[0]
         self.rect = self.image.get_rect()
         self.rect.center = self.path[self.path_index]
-        self.health = self.hero_hp_maxhp(self.hero_type)
+        self.health = self.hero_hp_maxhp(self.hero_type) * self.upgrade[self.herolevel]
         self.max_health = self.hero_hp_maxhp(
             self.hero_type) * self.upgrade[self.herolevel]
         self.attack_count = 0
@@ -191,11 +191,11 @@ class Hero:
 
     def hero_power(self, herotype):
         if(herotype == 'dog'):
-            return 2
+            return 4
         elif(herotype == 'crew'):
-            return 2
+            return 5
         elif(herotype == 'ship'):
-            return 7
+            return 8
         elif(herotype == 'brian'):
             return 7
 
@@ -203,11 +203,11 @@ class Hero:
 
     def move_speed(self, herotype):
         if(herotype == 'dog'):
-            return 1.5
+            return 3
         elif(herotype == 'crew'):
-            return 1
+            return 2.5
         elif(herotype == 'ship'):
-            return 0.6
+            return 2
         elif(herotype == 'brian'):
             return 2
 

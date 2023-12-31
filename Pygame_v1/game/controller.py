@@ -3,7 +3,6 @@ import os
 from settings import game_status, WIN_WIDTH, WIN_HEIGHT, SOUND_PATH, user_info, LEVEL_FINISH_TIMES
 
 
-
 # controller
 class GameControl:
     def __init__(self, game_model, game_view):
@@ -15,8 +14,7 @@ class GameControl:
                        "keyboard key": 0,
                        }
         self.request = None  # response of user input
-
-        self.animation_max_cd = 120
+        self.animation_max_cd = 80
         self.animation_cd = 0
 
     def update_model(self):

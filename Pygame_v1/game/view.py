@@ -246,7 +246,7 @@ class GameView:
             self.win.blit(Attack_range_text, (310, 450))
 
             Cost = pygame.font.Font(arial, 20)
-            Cost_text = Cost.render(" Cost = 100", True, WHITE)
+            Cost_text = Cost.render(" Cost = 40", True, WHITE)
             self.win.blit(Cost_text, (310, 470))
 
     def draw_data_dog(self):
@@ -304,7 +304,7 @@ class GameView:
             self.win.blit(Attack_range_text, (433, 450))
 
             Cost = pygame.font.Font(arial, 20)
-            Cost_text = Cost.render(" Cost = 50", True, WHITE)
+            Cost_text = Cost.render(" Cost = 30", True, WHITE)
             self.win.blit(Cost_text, (433, 470))
 
             # Topic_2 = pygame.font.Font(arial, 30)
@@ -435,7 +435,7 @@ class GameView:
 
             Upgrade_mul = pygame.font.Font(arial, 20)
             Upgrade_mul_text = Upgrade_mul.render(
-                "power and hp * 1.15", True, WHITE)
+                "power and hp * 1.3", True, WHITE)
             self.win.blit(Upgrade_mul_text, (673, 470))
 
     def draw_menu(self, menu):

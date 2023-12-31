@@ -38,21 +38,21 @@ class Event:
             self.move_count += 1
         else:
             self.move_count = 0
-            self.X = (random.randint(-600, -100),320)
+            self.X = (random.randint(-3000, -2000),320)
             self.Y = (2000,320)
-            print(self.X, " ", self.Y)
+            # print(self.X, " ", self.Y)
             #self.rect = (-600,0)
     def advance(self, model):
         self.move()
         waveX, waveY = self.rect.center
-        print(waveX)
+        # print(waveX)
         for en in model.en.expedition:
             enX, enY = en.rect.center
-            print(enX)
+            # print(enX)
             if(waveX - enX > 10 and waveX - enX < 20):
                 if(bool(random.getrandbits(1))):
-                    en.health -= 99999
-                else:
+                #     en.health -= 99999
+                # else:
                     en.health /= 2
         for he in model.he.expedition:
             heX, heY = he.rect.center

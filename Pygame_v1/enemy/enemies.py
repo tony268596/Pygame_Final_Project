@@ -13,8 +13,14 @@ ENEMY_IMAGE_3 = pygame.image.load(os.path.join(IMAGE_PATH, "wood-1.png"))
 
 
 class Enemy:
+    ## [(血量), (攻擊), (移速)]
+    one_data = [(15,17,20), (8, 9, 10), (1.2, 1.3, 1.4)]
+    two_data = [(15,17,20), (11, 12, 13), (1.5, 1.6, 1.7)]
+    three_data = [(10, 12, 15), (7,8,9), (2.2, 2.3, 2.4)]
+    
     def __init__(self, checkpoint):
         self.point = checkpoint
+        print(checkpoint)
         self.en_type = self.type_en(self.point)                             
         self.image = self.enemy_image(self.en_type)
         self.health = self.enemy_hp_maxhp(self.en_type, self.point)
@@ -31,13 +37,12 @@ class Enemy:
         self.range = self.attack_range(self.en_type)
         self.attack_music = pygame.mixer.Sound(os.path.join(SOUND_PATH,"DamageSound.mp3"))
         self.attack_light = 0
+
         
         
     def type_en(self, point):
-        #if point == 1 or point == 2:
         return random.randint(1, 3)
-        # elif point == 3:
-        #     return 5
+
 
     def move(self):
         x1, y1 = self.path[self.path_index]
@@ -75,77 +80,29 @@ class Enemy:
     # 最大血量
     def enemy_hp_maxhp(self, entype, point):     
         if(entype == 1):
-            entype_one_hp = [15, 20]
-            if(point == 1):
-                return entype_one_hp[0]
-            else:#elif(point == 2):
-                return entype_one_hp[1]
+            return self.one_data[0][point - 1]
         elif(entype == 2):
-            entype_two_hp = [15, 15]
-            if(point == 1):
-                return entype_two_hp[0]
-            else:#elif(point == 2):
-                return entype_two_hp[1]
+            return self.two_data[0][point - 1]
         elif(entype == 3):
-            entype_three_hp = [10, 18]
-            if(point == 1):
-                return entype_three_hp[0]
-            else:#elif(point == 2):
-                return entype_three_hp[1]
-        # elif(entype == 4):
-        #     return 50
-        # elif(entype == 5):
-        #     return 250
+            return self.three_data[0][point - 1]
         
     # 攻擊力    
     def enemy_power(self, entype, point):
         if(entype == 1):
-            entype_one_power = [8, 5]
-            if(point == 1):
-                return entype_one_power[0]
-            else:#elif(point == 2):
-                return entype_one_power[1]
+            return self.one_data[1][point - 1]
         elif(entype == 2):
-            entype_two_power = [11, 8]
-            if(point == 1):
-                return entype_two_power[0]
-            else:#elif(point == 2):
-                return entype_two_power[1]
+            return self.two_data[1][point - 1]
         elif(entype == 3):
-            entype_three_power = [7, 4]
-            if(point == 1):
-                return entype_three_power[0]
-            else:#elif(point == 2):
-                return entype_three_power[1]
-        # elif(entype == 4):
-        #     return 50
-        # elif(entype == 5):
-        #     return 999
+            return self.three_data[1][point - 1]
         
     # 移動速度    
     def move_speed(self, entype, point):
         if(entype == 1):
-            entype_one_speed = [1.2, 1.2]
-            if(point == 1):
-                return entype_one_speed[0]
-            else:#elif(point == 2):
-                return entype_one_speed[1]
+            return self.one_data[2][point - 1]
         elif(entype == 2):
-            entype_two_speed = [1.5, 0.8]
-            if(point == 1):
-                return entype_two_speed[0]
-            else:#elif(point == 2):
-                return entype_two_speed[1]
+            return self.two_data[2][point - 1]
         elif(entype == 3):
-            entype_three_speed = [2.2, 1.8]
-            if(point == 1):
-                return entype_three_speed[0]
-            else:#elif(point == 2):
-                return entype_three_speed[1]
-        # elif(entype == 4):
-        #     return 0.2
-        # elif(entype == 5):
-        #     return 0.15
+            return self.three_data[2][point - 1]
         
     # 攻擊最大冷卻    
     def attack_max_cd(self, entype):
@@ -155,10 +112,7 @@ class Enemy:
             return 170
         elif(entype == 3):
             return 70
-        # elif(entype == 4):
-        #     return 600
-        # elif(entype == 5):
-        #     return 150
+
         
     # 要不要攻擊
     def attack(self,model):
