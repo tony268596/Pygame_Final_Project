@@ -237,7 +237,7 @@ class GameView:
             self.win.blit(HP_text, (310, 410))
 
             Power = pygame.font.Font(arial, 20)
-            Power_text = Power.render(" Power = 7", True, WHITE)
+            Power_text = Power.render(" Power = 8", True, WHITE)
             self.win.blit(Power_text, (310, 430))
 
             Attack_range = pygame.font.Font(arial, 20)
@@ -267,7 +267,7 @@ class GameView:
             self.win.blit(HP_text, (550, 410))
 
             Power = pygame.font.Font(arial, 20)
-            Power_text = Power.render(" Power = 2", True, WHITE)
+            Power_text = Power.render(" Power = 4", True, WHITE)
             self.win.blit(Power_text, (550, 430))
 
             Attack_range = pygame.font.Font(arial, 20)
@@ -296,7 +296,7 @@ class GameView:
             self.win.blit(HP_text, (433, 410))
 
             Power = pygame.font.Font(arial, 20)
-            Power_text = Power.render(" Power = 2", True, WHITE)
+            Power_text = Power.render(" Power = 5", True, WHITE)
             self.win.blit(Power_text, (433, 430))
 
             Attack_range = pygame.font.Font(arial, 20)

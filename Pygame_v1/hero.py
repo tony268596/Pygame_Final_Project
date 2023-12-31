@@ -215,11 +215,11 @@ class Hero:
 
     def attack_max_cd(self, herotype):
         if(herotype == 'dog'):
-            return 85
+            return 65
         elif(herotype == 'crew'):
-            return 100
+            return 80
         elif(herotype == 'ship'):
-            return 150
+            return 90
         elif(herotype == 'brian'):
             return 20
 
