@@ -289,7 +289,7 @@ class GameView:
             self.win.blit(HP_text, (433, 410))
 
             Power = pygame.font.Font(arial, 20)
-            Power_text = Power.render(" Power = 5", True, WHITE)
+            Power_text = Power.render(" Power = 6", True, WHITE)
             self.win.blit(Power_text, (433, 430))
 
             Attack_range = pygame.font.Font(arial, 20)
@@ -550,7 +550,7 @@ class GameView:
         self.win.blit(congrats, (350, 15))
         #self.win.blit(game_finish_text, (300, 100))
         self.win.blit(game_win_text, (800, 560))
-        self.win.blit(game_completed_image, (262, 150))
+        # self.win.blit(game_completed_image, (262, 150))
 
     def draw_game_time(self, time):
         self.win.blit(clock_status_image, (WIN_WIDTH - 230, WIN_HEIGHT - 90))

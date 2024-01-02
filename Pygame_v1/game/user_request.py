@@ -27,7 +27,7 @@ class EnemyGenerator:
             if model.checkpoint == 1 or model.checkpoint == 2:
                 model.enemies.add(self.en_num(model.checkpoint),model)
                 self.cd = 0
-            elif model.checkpoint == 3 and self.boss_generate_flag == 1:
+            elif model.checkpoint == 3:
                 model.enemies.add(self.en_num(model.checkpoint),model)
                 self.cd = 0
                 self.boss_generate_flag = 0
@@ -36,7 +36,7 @@ class EnemyGenerator:
                 self.cd += 1
             elif model.checkpoint == 2:
                 self.cd += 1.2
-            else:
+            elif model.checkpoint == 3:
                 self.cd += 1.5
             
     def en_num(self, checkpoint):

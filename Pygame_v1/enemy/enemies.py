@@ -14,9 +14,9 @@ ENEMY_IMAGE_3 = pygame.image.load(os.path.join(IMAGE_PATH, "wood-1.png"))
 
 class Enemy:
     ## [(血量), (攻擊), (移速)]
-    one_data = [(15,20,25), (8, 9, 10), (1.2, 1.3, 1.4)]
-    two_data = [(15,23,27), (11, 12, 13), (1.5, 1.6, 1.7)]
-    three_data = [(10, 17, 30), (12,15,17), (2.2, 2.3, 2.4)]
+    one_data = [(12,15,19), (8, 11, 13), (1.2, 1.3, 1.4)]
+    two_data = [(13,17,20), (11, 13, 14), (1.5, 1.6, 1.7)]
+    three_data = [(10, 13, 15), (7,10,12), (2.2, 2.3, 2.4)]
     
     def __init__(self, checkpoint):
         self.point = checkpoint

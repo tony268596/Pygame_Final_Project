@@ -180,7 +180,7 @@ class Hero:
         if(herotype == 'dog'):
             return 4
         elif(herotype == 'crew'):
-            return 5
+            return 6
         elif(herotype == 'ship'):
             return 8
 

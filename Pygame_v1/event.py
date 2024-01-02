@@ -54,8 +54,8 @@ class Event:
             # print(enX)
             if(waveX - enX > 10 and waveX - enX < 20):
                 if(bool(random.getrandbits(1))):
-                #     en.health -= 99999
-                # else:
+                    en.health -= 99999
+                else:
                     en.health /= 2
         for he in model.he.expedition:
             heX, heY = he.rect.center
@@ -63,7 +63,9 @@ class Event:
                 if(bool(random.getrandbits(1))):
                     he.health -= 99999
                 else:
-                    he.health /= 2
+                    if(random.getrandbits(1)):
+                        he.health /= 2
+
         if(waveX - -100 >= 0 and waveX - -100 <= 10):
             pygame.mixer.Channel(3).play(tsunami_sound)
             
