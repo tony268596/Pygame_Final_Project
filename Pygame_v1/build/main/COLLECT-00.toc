@@ -1,4 +1,5 @@
 ([('main.exe',
+<<<<<<< HEAD
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\build\\main\\main.exe',
    'EXECUTABLE'),
   ('python38.dll', 'c:\\program files\\python38\\python38.dll', 'BINARY'),
@@ -19,10 +20,18 @@
    'BINARY'),
   ('SDL2_image.dll',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\SDL2_image.dll',
+=======
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\build\\main\\main.exe',
+   'EXECUTABLE'),
+  ('python38.dll', 'c:\\program files\\python38\\python38.dll', 'BINARY'),
+  ('libogg-0.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\libogg-0.dll',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'BINARY'),
   ('libjpeg-9.dll',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\libjpeg-9.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('SDL2.dll',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\SDL2.dll',
    'BINARY'),
@@ -40,12 +49,51 @@
    'BINARY'),
   ('libtiff-5.dll',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\libtiff-5.dll',
+=======
+  ('libopus-0.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\libopus-0.dll',
+   'BINARY'),
+  ('zlib1.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\zlib1.dll',
+   'BINARY'),
+  ('SDL2_image.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\SDL2_image.dll',
+   'BINARY'),
+  ('SDL2_ttf.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\SDL2_ttf.dll',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'BINARY'),
   ('libpng16-16.dll',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\libpng16-16.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('libogg-0.dll',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\libogg-0.dll',
+=======
+  ('portmidi.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\portmidi.dll',
+   'BINARY'),
+  ('libtiff-5.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\libtiff-5.dll',
+   'BINARY'),
+  ('SDL2_mixer.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\SDL2_mixer.dll',
+   'BINARY'),
+  ('freetype.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\freetype.dll',
+   'BINARY'),
+  ('libopusfile-0.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\libopusfile-0.dll',
+   'BINARY'),
+  ('SDL2.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\SDL2.dll',
+   'BINARY'),
+  ('libwebp-7.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\libwebp-7.dll',
+   'BINARY'),
+  ('libmodplug-1.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\libmodplug-1.dll',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'BINARY'),
   ('libopenblas64__v0.3.21-gcc_10_3_0.dll',
    'C:\\Users\\USER\\AppData\\Roaming\\Python\\Python38\\site-packages\\numpy\\.libs\\libopenblas64__v0.3.21-gcc_10_3_0.dll',
@@ -244,18 +292,30 @@
   ('pygame\\SDL2.dll',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\SDL2.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('pygame\\libopus-0.dll',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\libopus-0.dll',
    'BINARY'),
   ('pygame\\libogg-0.dll',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\libogg-0.dll',
    'BINARY'),
+=======
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
   ('pygame\\zlib1.dll',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\zlib1.dll',
    'BINARY'),
   ('pygame\\libjpeg-9.dll',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\libjpeg-9.dll',
    'BINARY'),
+<<<<<<< HEAD
+=======
+  ('pygame\\libopus-0.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\libopus-0.dll',
+   'BINARY'),
+  ('pygame\\libogg-0.dll',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\libogg-0.dll',
+   'BINARY'),
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
   ('libcrypto-1_1.dll',
    'c:\\program files\\python38\\DLLs\\libcrypto-1_1.dll',
    'BINARY'),
@@ -267,10 +327,17 @@
   ('numpy\\.libs\\libopenblas64__v0.3.21-gcc_10_3_0.dll',
    'C:\\Users\\USER\\AppData\\Roaming\\Python\\Python38\\site-packages\\numpy\\.libs\\libopenblas64__v0.3.21-gcc_10_3_0.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('pywin32_system32\\pywintypes38.dll',
    'C:\\Users\\USER\\AppData\\Roaming\\Python\\Python38\\site-packages\\pywin32_system32\\pywintypes38.dll',
    'BINARY'),
   ('VCRUNTIME140_1.dll', 'C:\\Windows\\system32\\VCRUNTIME140_1.dll', 'BINARY'),
+=======
+  ('VCRUNTIME140_1.dll', 'C:\\Windows\\system32\\VCRUNTIME140_1.dll', 'BINARY'),
+  ('pywin32_system32\\pywintypes38.dll',
+   'C:\\Users\\USER\\AppData\\Roaming\\Python\\Python38\\site-packages\\pywin32_system32\\pywintypes38.dll',
+   'BINARY'),
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
   ('pygame\\SDL2_image.dll',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\SDL2_image.dll',
    'BINARY'),
@@ -287,6 +354,7 @@
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\freetype.dll',
    'BINARY'),
   ('base_library.zip',
+<<<<<<< HEAD
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\build\\main\\base_library.zip',
    'DATA'),
   ('pygame\\pygame_icon.bmp',
@@ -294,4 +362,13 @@
    'DATA'),
   ('pygame\\freesansbold.ttf',
    'c:\\program files\\python38\\lib\\site-packages\\pygame\\freesansbold.ttf',
+=======
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\build\\main\\base_library.zip',
+   'DATA'),
+  ('pygame\\freesansbold.ttf',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\freesansbold.ttf',
+   'DATA'),
+  ('pygame\\pygame_icon.bmp',
+   'c:\\program files\\python38\\lib\\site-packages\\pygame\\pygame_icon.bmp',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'DATA')],)

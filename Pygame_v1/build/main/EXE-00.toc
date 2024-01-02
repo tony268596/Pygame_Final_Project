@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 ('D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\build\\main\\main.exe',
  False,
  False,
  True,
  'C:\\Users\\USER\\AppData\\Roaming\\Python\\Python38\\site-packages\\PyInstaller\\bootloader\\images\\icon-windowed.ico',
+=======
+('D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\build\\main\\main.exe',
+ True,
+ False,
+ True,
+ 'C:\\Users\\USER\\AppData\\Roaming\\Python\\Python38\\site-packages\\PyInstaller\\bootloader\\images\\icon-console.ico',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
  None,
  False,
  False,
@@ -29,6 +37,7 @@
  None,
  None,
  None,
+<<<<<<< HEAD
  'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\build\\main\\main.pkg',
  [('pyi-contents-directory _internal', '', 'OPTION'),
   ('PYZ-00.pyz',
@@ -48,6 +57,27 @@
    'PYMODULE'),
   ('pyimod04_pywin32',
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\build\\main\\localpycs\\pyimod04_pywin32.pyc',
+=======
+ 'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\build\\main\\main.pkg',
+ [('pyi-contents-directory _internal', '', 'OPTION'),
+  ('PYZ-00.pyz',
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\build\\main\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\build\\main\\localpycs\\struct.pyc',
+   'PYMODULE'),
+  ('pyimod01_archive',
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\build\\main\\localpycs\\pyimod01_archive.pyc',
+   'PYMODULE'),
+  ('pyimod02_importers',
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\build\\main\\localpycs\\pyimod02_importers.pyc',
+   'PYMODULE'),
+  ('pyimod03_ctypes',
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\build\\main\\localpycs\\pyimod03_ctypes.pyc',
+   'PYMODULE'),
+  ('pyimod04_pywin32',
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\build\\main\\localpycs\\pyimod04_pywin32.pyc',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'PYMODULE'),
   ('pyiboot01_bootstrap',
    'C:\\Users\\USER\\AppData\\Roaming\\Python\\Python38\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
@@ -65,13 +95,23 @@
    'C:\\Users\\USER\\AppData\\Roaming\\Python\\Python38\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgres.py',
    'PYSOURCE'),
   ('main',
+<<<<<<< HEAD
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\main.py',
+=======
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\main.py',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'PYSOURCE')],
  [],
  False,
  False,
+<<<<<<< HEAD
  1704189840,
  [('runw.exe',
    'C:\\Users\\USER\\AppData\\Roaming\\Python\\Python38\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\runw.exe',
+=======
+ 1704184170,
+ [('run.exe',
+   'C:\\Users\\USER\\AppData\\Roaming\\Python\\Python38\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'EXECUTABLE')],
  'c:\\program files\\python38\\python38.dll')

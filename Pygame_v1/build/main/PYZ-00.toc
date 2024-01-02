@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ('D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\build\\main\\PYZ-00.pyz',
+=======
+('D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\build\\main\\PYZ-00.pyz',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
  [('__future__', 'c:\\program files\\python38\\lib\\__future__.py', 'PYMODULE'),
   ('_compat_pickle',
    'c:\\program files\\python38\\lib\\_compat_pickle.py',
@@ -108,18 +112,30 @@
   ('bdb', 'c:\\program files\\python38\\lib\\bdb.py', 'PYMODULE'),
   ('bisect', 'c:\\program files\\python38\\lib\\bisect.py', 'PYMODULE'),
   ('button',
+<<<<<<< HEAD
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\button.py',
+=======
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\button.py',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'PYMODULE'),
   ('bz2', 'c:\\program files\\python38\\lib\\bz2.py', 'PYMODULE'),
   ('calendar', 'c:\\program files\\python38\\lib\\calendar.py', 'PYMODULE'),
   ('choose_menu',
+<<<<<<< HEAD
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\choose_menu.py',
+=======
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\choose_menu.py',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'PYMODULE'),
   ('cmd', 'c:\\program files\\python38\\lib\\cmd.py', 'PYMODULE'),
   ('code', 'c:\\program files\\python38\\lib\\code.py', 'PYMODULE'),
   ('codeop', 'c:\\program files\\python38\\lib\\codeop.py', 'PYMODULE'),
   ('color_settings',
+<<<<<<< HEAD
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\color_settings.py',
+=======
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\color_settings.py',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'PYMODULE'),
   ('concurrent',
    'c:\\program files\\python38\\lib\\concurrent\\__init__.py',
@@ -243,15 +259,23 @@
    'PYMODULE'),
   ('enemy', '-', 'PYMODULE'),
   ('enemy.enemies',
+<<<<<<< HEAD
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\enemy\\enemies.py',
    'PYMODULE'),
   ('event',
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\event.py',
+=======
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\enemy\\enemies.py',
+   'PYMODULE'),
+  ('event',
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\event.py',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'PYMODULE'),
   ('fnmatch', 'c:\\program files\\python38\\lib\\fnmatch.py', 'PYMODULE'),
   ('ftplib', 'c:\\program files\\python38\\lib\\ftplib.py', 'PYMODULE'),
   ('game', '-', 'PYMODULE'),
   ('game.controller',
+<<<<<<< HEAD
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\game\\controller.py',
    'PYMODULE'),
   ('game.game',
@@ -265,6 +289,21 @@
    'PYMODULE'),
   ('game.view',
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\game\\view.py',
+=======
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\game\\controller.py',
+   'PYMODULE'),
+  ('game.game',
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\game\\game.py',
+   'PYMODULE'),
+  ('game.model',
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\game\\model.py',
+   'PYMODULE'),
+  ('game.user_request',
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\game\\user_request.py',
+   'PYMODULE'),
+  ('game.view',
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\game\\view.py',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'PYMODULE'),
   ('getopt', 'c:\\program files\\python38\\lib\\getopt.py', 'PYMODULE'),
   ('getpass', 'c:\\program files\\python38\\lib\\getpass.py', 'PYMODULE'),
@@ -273,7 +312,11 @@
   ('gzip', 'c:\\program files\\python38\\lib\\gzip.py', 'PYMODULE'),
   ('hashlib', 'c:\\program files\\python38\\lib\\hashlib.py', 'PYMODULE'),
   ('hero',
+<<<<<<< HEAD
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\hero.py',
+=======
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\hero.py',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'PYMODULE'),
   ('hmac', 'c:\\program files\\python38\\lib\\hmac.py', 'PYMODULE'),
   ('html', 'c:\\program files\\python38\\lib\\html\\__init__.py', 'PYMODULE'),
@@ -332,7 +375,11 @@
   ('lzma', 'c:\\program files\\python38\\lib\\lzma.py', 'PYMODULE'),
   ('menu', '-', 'PYMODULE'),
   ('menu.menus',
+<<<<<<< HEAD
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\menu\\menus.py',
+=======
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\menu\\menus.py',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'PYMODULE'),
   ('mimetypes', 'c:\\program files\\python38\\lib\\mimetypes.py', 'PYMODULE'),
   ('multiprocessing',
@@ -1029,7 +1076,11 @@
   ('secrets', 'c:\\program files\\python38\\lib\\secrets.py', 'PYMODULE'),
   ('selectors', 'c:\\program files\\python38\\lib\\selectors.py', 'PYMODULE'),
   ('settings',
+<<<<<<< HEAD
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\settings.py',
+=======
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\settings.py',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'PYMODULE'),
   ('shlex', 'c:\\program files\\python38\\lib\\shlex.py', 'PYMODULE'),
   ('shutil', 'c:\\program files\\python38\\lib\\shutil.py', 'PYMODULE'),
@@ -1040,7 +1091,11 @@
    'PYMODULE'),
   ('ssl', 'c:\\program files\\python38\\lib\\ssl.py', 'PYMODULE'),
   ('start_menu',
+<<<<<<< HEAD
    'D:\\Python_game_design\\Final_Project\\game_f1\\Pygame_Final_Project\\Pygame_v1\\start_menu.py',
+=======
+   'D:\\Python_game_design\\Final_Project\\game_b7\\Pygame_Final_Project\\Pygame_v1\\start_menu.py',
+>>>>>>> a37b06e5ee280733fb53a08b95f85a36c2860f76
    'PYMODULE'),
   ('string', 'c:\\program files\\python38\\lib\\string.py', 'PYMODULE'),
   ('stringprep', 'c:\\program files\\python38\\lib\\stringprep.py', 'PYMODULE'),
