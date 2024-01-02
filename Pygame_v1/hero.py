@@ -36,16 +36,6 @@ SHIP_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, 
                os.path.join(IMAGE_PATH, "ship-4.png")), (70, 120)),
            pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "ship-5.png")), (70, 120))]
 
-BRIAN_IMAGE = [pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "brian1.png")), (50, 100)),
-               pygame.transform.scale(pygame.image.load(
-                   os.path.join(IMAGE_PATH, "brian2.png")), (50, 100)),
-               pygame.transform.scale(pygame.image.load(
-                   os.path.join(IMAGE_PATH, "brian3.png")), (50, 100)),
-               pygame.transform.scale(pygame.image.load(
-                   os.path.join(IMAGE_PATH, "brian4.png")), (50, 100)),
-               pygame.transform.scale(pygame.image.load(
-                   os.path.join(IMAGE_PATH, "brian5.png")), (50, 100)),
-               pygame.transform.scale(pygame.image.load(os.path.join(IMAGE_PATH, "brian6.png")), (50, 100))]
 
 DOG_PUNCH_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "paw.png")), (50, 50))
@@ -140,8 +130,7 @@ class Hero:
             return CREW_IMAGE
         elif(herotype == 'ship'):
             return SHIP_IMAGE
-        elif(herotype == 'brian'):
-            return BRIAN_IMAGE
+
     # 攻擊圖
 
     def hero_attack_image(self, herotype):
@@ -151,8 +140,7 @@ class Hero:
             return CREW_PUNCH_IMAGE
         elif(herotype == 'ship'):
             return SHIP_PUNCH_IMAGE
-        elif(herotype == 'brian'):
-            return BRIAN_PUNCH_IMAGE
+
 
     # 攻擊圖的x偏差
     def hero_attack_loactionx(self, herotype):
@@ -184,8 +172,7 @@ class Hero:
             return 35
         elif(herotype == 'ship'):
             return 40
-        elif(herotype == 'brian'):
-            return 1
+
 
     # 攻擊力
 
@@ -196,8 +183,7 @@ class Hero:
             return 5
         elif(herotype == 'ship'):
             return 8
-        elif(herotype == 'brian'):
-            return 7
+
 
     # 移動速度
 
@@ -208,8 +194,7 @@ class Hero:
             return 2.5
         elif(herotype == 'ship'):
             return 2
-        elif(herotype == 'brian'):
-            return 2
+
 
     # 攻擊最大冷卻
 
@@ -219,9 +204,8 @@ class Hero:
         elif(herotype == 'crew'):
             return 80
         elif(herotype == 'ship'):
-            return 90
-        elif(herotype == 'brian'):
-            return 20
+            return 100
+
 
     # 要不要攻擊
     def attack(self, model):
@@ -243,8 +227,7 @@ class Hero:
             return 40
         elif(herotype == 'ship'):
             return 180
-        elif(herotype == 'brian'):
-            return 60
+
     
     def arrive(self):
         x, y = self.rect.center
@@ -342,8 +325,6 @@ class HeroGroup:
             new_hero = Hero('crew', herolevel)
         elif herotype == 'ship':
             new_hero = Hero('ship', herolevel)
-        elif herotype == 'brian':
-            new_hero = Hero('brian', herolevel)
         if new_hero:
             self.expedition.append(new_hero)
 

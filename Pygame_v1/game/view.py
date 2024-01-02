@@ -22,8 +22,6 @@ crew_button_image = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "crew_btn.png")), (80, 80))
 dog_button_image = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "dog_btn.png")), (80, 80))
-brian_button_image = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "brian_btn.jpg")), (80, 80))
 locked_button_image = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "locked.png")), (80, 80))
 
@@ -45,8 +43,8 @@ hero_base_image = pygame.transform.scale(
 # skills button images
 UPGRADE_BTN_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "upgrade_btn.png")), (80, 80))
-SPECIAL_SKILL_BTN_IMAGE = pygame.transform.scale(
-    pygame.image.load(os.path.join(IMAGE_PATH, "skill.png")), (160, 50))
+# SPECIAL_SKILL_BTN_IMAGE = pygame.transform.scale(
+#     pygame.image.load(os.path.join(IMAGE_PATH, "skill.png")), (160, 50))
 SCORE_LOG_IMAGE = pygame.transform.scale(
     pygame.image.load(os.path.join(IMAGE_PATH, "score.png")), (160, 50))
 
@@ -63,10 +61,7 @@ game_loss_image = pygame.transform.scale(pygame.image.load(
     os.path.join(IMAGE_PATH, "game_over_ground.png")), (1024, 600))
 game_win_image = pygame.transform.scale(pygame.image.load(
     os.path.join(IMAGE_PATH, "win_background.png")), (1024, 600))
-SKILL_ANIMATION_IMAGE = pygame.transform.scale(pygame.image.load(
-    os.path.join(IMAGE_PATH, "skilldisplay.png")), (600, 450))
-game_completed_image = pygame.transform.scale(pygame.image.load(
-    os.path.join(IMAGE_PATH, "game_completed.png")), (500, 300))
+
 
 # Clock status image
 clock_status_image = pygame.transform.scale(pygame.image.load(
@@ -81,13 +76,12 @@ class GameView:
         self.win = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
         self.point = checkpoint
         # use for skill animation
-        self.skill_move_path = skill_PATH
+        # self.skill_move_path = skill_PATH
         self.path_index = 0
         self.move_count = 0
         self.stride = 5
-        self.skillimage = SKILL_ANIMATION_IMAGE
-        self.rect = self.skillimage.get_rect()
-        self.rect.center = self.skill_move_path[self.path_index]
+        # self.rect = self.skillimage.get_rect()
+        # self.rect.center = self.skill_move_path[self.path_index]
 
     def draw_bg(self):
         '''draw background & and all needed images according to checkpoint'''
@@ -110,7 +104,6 @@ class GameView:
 
         ''' btn of upgrade '''
         self.win.blit(UPGRADE_BTN_IMAGE, (675, 510))
-        # self.win.blit(SPECIAL_SKILL_BTN_IMAGE, (675, 550))
 
     def draw_enemies(self, enemies):
         for en in enemies.get():
@@ -337,35 +330,35 @@ class GameView:
             self.win.blit(Cost_text, (550, 475))
             """
 
-    def draw_data_brian(self):
-        x, y = pygame.mouse.get_pos()
-        brian_btn_rect = brian_button_image.get_rect()
-        brian_btn_rect.center = (235, 550)
-        if(brian_btn_rect.collidepoint(x, y)):
-            brian_data = pygame.Surface((220, 100), pygame.SRCALPHA)
-            brian_data.fill((0, 0, 0, 64))
-            self.win.blit(brian_data, (190, 390))
+    # def draw_data_brian(self):
+    #     x, y = pygame.mouse.get_pos()
+    #     brian_btn_rect = brian_button_image.get_rect()
+    #     brian_btn_rect.center = (235, 550)
+    #     if(brian_btn_rect.collidepoint(x, y)):
+    #         brian_data = pygame.Surface((220, 100), pygame.SRCALPHA)
+    #         brian_data.fill((0, 0, 0, 64))
+    #         self.win.blit(brian_data, (190, 390))
 
-            Topic = pygame.font.Font(arial, 22)
-            Topic_text = Topic.render(
-                " Unlock after checkpoint 1", True, WHITE)
-            self.win.blit(Topic_text, (195, 390))
+    #         Topic = pygame.font.Font(arial, 22)
+    #         Topic_text = Topic.render(
+    #             " Unlock after checkpoint 1", True, WHITE)
+    #         self.win.blit(Topic_text, (195, 390))
 
-            HP = pygame.font.Font(arial, 20)
-            HP_text = HP.render(" HP = 1, attack then die", True, WHITE)
-            self.win.blit(HP_text, (195, 410))
+    #         HP = pygame.font.Font(arial, 20)
+    #         HP_text = HP.render(" HP = 1, attack then die", True, WHITE)
+    #         self.win.blit(HP_text, (195, 410))
 
-            Power = pygame.font.Font(arial, 20)
-            Power_text = Power.render(" Power = 7, AOE", True, WHITE)
-            self.win.blit(Power_text, (195, 430))
+    #         Power = pygame.font.Font(arial, 20)
+    #         Power_text = Power.render(" Power = 7, AOE", True, WHITE)
+    #         self.win.blit(Power_text, (195, 430))
 
-            Attack_range = pygame.font.Font(arial, 20)
-            Attack_range_text = Attack_range.render(" Range = 60", True, WHITE)
-            self.win.blit(Attack_range_text, (195, 450))
+    #         Attack_range = pygame.font.Font(arial, 20)
+    #         Attack_range_text = Attack_range.render(" Range = 60", True, WHITE)
+    #         self.win.blit(Attack_range_text, (195, 450))
 
-            Cost = pygame.font.Font(arial, 20)
-            Cost_text = Cost.render(" Cost = 70", True, WHITE)
-            self.win.blit(Cost_text, (195, 470))
+    #         Cost = pygame.font.Font(arial, 20)
+    #         Cost_text = Cost.render(" Cost = 70", True, WHITE)
+    #         self.win.blit(Cost_text, (195, 470))
 
     def draw_locked_brian(self):
         # x, y = pygame.mouse.get_pos()
@@ -519,26 +512,26 @@ class GameView:
         self.win.blit(game_win_image, (0, 0))
         self.win.blit(game_win_text, (830, 560))
 
-    def draw_skill_animation(self):
-        x1, y1 = self.skill_move_path[self.path_index]
-        x2, y2 = self.skill_move_path[self.path_index + 1]
-        distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
-        max_count = int(distance / self.stride)
-        # compute the unit vector
-        unit_vector_x = (x2 - x1) / distance
-        unit_vector_y = (y2 - y1) / distance
-        # compute the movement
-        delta_x = unit_vector_x * self.stride * self.move_count
-        delta_y = unit_vector_y * self.stride * self.move_count
-        # update the position and counter
-        if self.move_count <= max_count:
-            self.rect.center = (x1 + delta_x, y1 + delta_y)
-            self.move_count += 1
-        else:
-            self.move_count = 0
-            self.rect.center = self.skill_move_path[self.path_index]
+    # def draw_skill_animation(self):
+    #     x1, y1 = self.skill_move_path[self.path_index]
+    #     x2, y2 = self.skill_move_path[self.path_index + 1]
+    #     distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+    #     max_count = int(distance / self.stride)
+    #     # compute the unit vector
+    #     unit_vector_x = (x2 - x1) / distance
+    #     unit_vector_y = (y2 - y1) / distance
+    #     # compute the movement
+    #     delta_x = unit_vector_x * self.stride * self.move_count
+    #     delta_y = unit_vector_y * self.stride * self.move_count
+    #     # update the position and counter
+    #     if self.move_count <= max_count:
+    #         self.rect.center = (x1 + delta_x, y1 + delta_y)
+    #         self.move_count += 1
+    #     else:
+    #         self.move_count = 0
+    #         self.rect.center = self.skill_move_path[self.path_index]
 
-        self.win.blit(self.skillimage, self.rect)
+    #     self.win.blit(self.skillimage, self.rect)
 
     def draw_finish_win(self):
         transparent_surface = pygame.Surface(

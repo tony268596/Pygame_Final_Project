@@ -32,7 +32,12 @@ class EnemyGenerator:
                 self.cd = 0
                 self.boss_generate_flag = 0
         else:
-            self.cd += 1
+            if model.checkpoint == 1:
+                self.cd += 1
+            elif model.checkpoint == 2:
+                self.cd += 1.2
+            else:
+                self.cd += 1.5
             
     def en_num(self, checkpoint):
         if checkpoint == 1:

@@ -13,7 +13,7 @@ tsunami_sound = pygame.mixer.Sound(os.path.join(SOUND_PATH, "tsunami-wave.mp3"))
 
 
 class Event:
-    def __init__(self):
+    def __init__(self, checkpoint):
         self.image = tsunami_wave_image
         self.rect = self.image.get_rect()
         self.stride = 10
@@ -21,6 +21,9 @@ class Event:
         self.enable = False
         self.X =  (-1000,320)#(-10000,320) about 30s
         self.Y = (2000,320)
+        self.point = checkpoint
+        self.level__ = ((-5000, 320), (-3000, 320), (-2000, 320))
+
     def move(self):
         x1, y1 = self.X
         x2, y2 = self.Y
@@ -38,7 +41,7 @@ class Event:
             self.move_count += 1
         else:
             self.move_count = 0
-            self.X = (random.randint(-3000, -2000),320)
+            self.X = self.level__[self.point - 1]
             self.Y = (2000,320)
             # print(self.X, " ", self.Y)
             #self.rect = (-600,0)

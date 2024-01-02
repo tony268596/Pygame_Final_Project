@@ -94,12 +94,12 @@ class GameControl:
         self.view.draw_data_dog()
         self.view.draw_data_crew()
         
-        if LEVEL_FINISH_TIMES[0] != 0:
-            self.view.draw_data_brian()
-        else:
-            self.view.draw_locked_brian()
+        # if LEVEL_FINISH_TIMES[0] != 0:
+        #     self.view.draw_data_brian()
+        # else:
+        #     self.view.draw_locked_brian()
 
-        self.view.draw_skill_data()
+        # self.view.draw_skill_data()
         self.view.draw_upgrade_data()
 
         self.view.draw_attack_en(self.model.en.expedition)

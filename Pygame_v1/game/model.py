@@ -20,7 +20,7 @@ class GameModel:
         self.__heros = HeroGroup()
         self.he = self.__heros
 
-        self.ev = Event()
+        self.ev = Event(self.checkpoint)
 
         self.__menu = None
         self.__main_menu = MainMenu()
