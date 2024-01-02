@@ -270,7 +270,7 @@ class HeroGroup:
 
             if self.he_to_base_range(hero):
                 if hero.arrive() and model.entower_hp > 0:
-                    model.score+=100
+                    model.score += 100
                     self.retreat(hero)
                     if hero.hero_type == "brian":
                         self.retreat(hero)
